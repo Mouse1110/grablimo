@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_google_maps/flutter_google_maps.dart';
-import 'package:flutter_my_train/src/screen/page/staffhome/staffhome.dart';
-import 'package:flutter_my_train/src/staffmodel/staffmodel.dart';
 import 'package:provider/provider.dart';
+
+import 'src/model/staffmodel.dart';
+import 'src/views/staff/home.dart';
 
 void main() {
   GoogleMap.init('AIzaSyB95RXOzdsh9JtGrD9YCzb-oTga_7eYmw4');
