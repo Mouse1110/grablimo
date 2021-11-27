@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_my_train/src/controller/login/login.dart';
+import 'package:flutter_my_train/src/model/client.dart';
+import 'package:flutter_my_train/src/utils/push.dart';
 import 'package:flutter_my_train/src/views/home/home.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -125,12 +127,9 @@ class _LoginState extends State<Login> {
                                           )
                                               .then((value) {
                                             if (value) {
-                                              Navigator.pushReplacement(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        Home(),
-                                                  ));
+                                              Push.nextClient(
+                                                  context: context,
+                                                  page: Home());
                                             }
                                           });
                                         },

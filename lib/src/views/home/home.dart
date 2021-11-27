@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_my_train/src/utils/push.dart';
 import 'package:flutter_my_train/src/views/book/location.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
@@ -67,19 +68,6 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          Container(
-            width: 32,
-            height: 32,
-            decoration: BoxDecoration(
-                color: Colors.grey, borderRadius: BorderRadius.circular(8)),
-            child: Center(
-              child: Image.asset(
-                'assets/location.png',
-                width: 16,
-                height: 16,
-              ),
-            ),
-          )
         ],
       );
 
@@ -289,14 +277,8 @@ class _HomeState extends State<Home> {
                             alignment: Alignment.centerRight,
                             child: GestureDetector(
                               onTap: () {
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => BookLocation(
-                                        diemDi: _diemDi.text,
-                                        diemDen: _diemDen.text,
-                                      ),
-                                    ));
+                                Push.nextClient(
+                                    context: context, page: BookLocation());
                               },
                               child: Container(
                                 width: 150,
@@ -361,14 +343,8 @@ class _HomeState extends State<Home> {
                                 left: 50,
                                 child: GestureDetector(
                                   onTap: () {
-                                    Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => BookLocation(
-                                            diemDi: _diemDi.text,
-                                            diemDen: _diemDen.text,
-                                          ),
-                                        ));
+                                    Push.nextClient(
+                                        context: context, page: BookLocation());
                                   },
                                   child: Container(
                                     width: 60,
