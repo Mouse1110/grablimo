@@ -1,0 +1,4 @@
+#Sat Nov 27 17:42:37 ICT 2021
+base.0=E\:\\Git\\grablimo\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

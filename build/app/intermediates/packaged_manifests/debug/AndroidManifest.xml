@@ -12,8 +12,14 @@
          to allow setting breakpoints, to provide hot reload, etc.
     -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- Include required permissions for Google Maps API to run. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--
+ The following two permissions are not required to use
+     Google Maps Android API v2, but are recommended. They are required if you access the user's current location, either programmatically, or by enabling the My Location layer.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -41,9 +47,7 @@
             <meta-data
                 android:name="io.flutter.embedding.android.NormalTheme"
                 android:resource="@style/NormalTheme" />
-            <meta-data
-                android:name="com.google.android.geo.API_KEY"
-                android:value="AIzaSyB95RXOzdsh9JtGrD9YCzb-oTga_7eYmw4" />
+
             <!--
                  Displays an Android View that continues showing the launch screen
                  Drawable until Flutter paints its first frame, then this splash
@@ -68,6 +72,9 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB95RXOzdsh9JtGrD9YCzb-oTga_7eYmw4" />
         <!-- Needs to be explicitly declared on P+ -->
         <uses-library
             android:name="org.apache.http.legacy"
