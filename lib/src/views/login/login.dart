@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_my_train/src/controller/login/login.dart';
+import 'package:flutter_my_train/src/views/home/home.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({Key key}) : super(key: key);
 
-  Widget input({String title, String hint}) => Column(
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  TextEditingController _nameInput = TextEditingController();
+  TextEditingController _passInput = TextEditingController();
+
+  LoginController _controller;
+
+  Widget input({TextEditingController controller, String title, String hint}) =>
+      Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
@@ -13,6 +26,7 @@ class Login extends StatelessWidget {
                 GoogleFonts.nunito(fontSize: 18, fontWeight: FontWeight.w700),
           ),
           TextField(
+            controller: controller,
             decoration: InputDecoration(
                 hintText: hint,
                 hintStyle: GoogleFonts.nunito(
@@ -66,12 +80,14 @@ class Login extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     input(
+                                        controller: _nameInput,
                                         title: 'Số điện thoại',
                                         hint: 'Nhập số điện thoại'),
                                     const SizedBox(
                                       height: 10,
                                     ),
                                     input(
+                                        controller: _passInput,
                                         title: 'Mật khẩu',
                                         hint: 'Nhập mật khẩu của bạn'),
                                     const SizedBox(
@@ -93,21 +109,40 @@ class Login extends StatelessWidget {
                                   alignment: Alignment.center,
                                   child: Column(
                                     children: [
-                                      Container(
-                                        width: 200,
-                                        height: 60,
-                                        alignment: Alignment.center,
-                                        decoration: BoxDecoration(
-                                            color: const Color.fromRGBO(
-                                                255, 152, 94, 1),
-                                            borderRadius:
-                                                BorderRadius.circular(24)),
-                                        child: Text(
-                                          'Xác nhận',
-                                          style: GoogleFonts.nunito(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.white),
+                                      GestureDetector(
+                                        onTap: () {
+                                          _controller
+                                              .login(
+                                            name: _nameInput.text,
+                                            pass: _passInput.text,
+                                          )
+                                              .then((value) {
+                                            if (value) {
+                                              Navigator.pushReplacement(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Home(),
+                                                  ));
+                                            }
+                                          });
+                                        },
+                                        child: Container(
+                                          width: 200,
+                                          height: 60,
+                                          alignment: Alignment.center,
+                                          decoration: BoxDecoration(
+                                              color: const Color.fromRGBO(
+                                                  255, 152, 94, 1),
+                                              borderRadius:
+                                                  BorderRadius.circular(24)),
+                                          child: Text(
+                                            'Xác nhận',
+                                            style: GoogleFonts.nunito(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white),
+                                          ),
                                         ),
                                       ),
                                       const SizedBox(
@@ -159,6 +194,21 @@ class Login extends StatelessWidget {
           ),
         ),
       );
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller = LoginController(context: context);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _nameInput.dispose();
+    _passInput.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

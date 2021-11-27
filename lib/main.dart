@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_google_maps/flutter_google_maps.dart';
 import 'package:flutter_my_train/src/model/client.dart';
-import 'package:flutter_my_train/src/views/login/login.dart';
-import 'package:flutter_my_train/src/views/staff/map.dart';
+import 'package:flutter_my_train/src/views/staff/home.dart';
 import 'package:provider/provider.dart';
 
 import 'src/model/staff.dart';
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => StaffModel()),
           ChangeNotifierProvider(create: (_) => ClientModel()),
         ],
-        child: StaffMap(),
+        child: StaffHome(),
       ),
     );
   }

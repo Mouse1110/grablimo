@@ -7,6 +7,10 @@
      Google Maps Android API v2, but are recommended. They are required if you access the user's current location, either programmatically, or by enabling the My Location layer.-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+
    <application
         android:label="flutter_my_train"
         android:usesCleartextTraffic="true"

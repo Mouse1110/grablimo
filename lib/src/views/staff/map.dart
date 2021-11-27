@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_google_maps/flutter_google_maps.dart';
 import 'package:flutter_my_train/src/utils/colors.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class StaffMap extends StatefulWidget {
   const StaffMap({Key key}) : super(key: key);
@@ -12,6 +13,31 @@ class StaffMap extends StatefulWidget {
 class _StaffMapState extends State<StaffMap> {
   GlobalKey<GoogleMapStateBase> _key = GlobalKey<GoogleMapStateBase>();
   final Set<Marker> markers = new Set();
+
+  Future<void> requestLocationPermission() async {
+    final serviceStatusLocation = await Permission.locationWhenInUse.isGranted;
+
+    bool isLocation = serviceStatusLocation == ServiceStatus.enabled;
+
+    final status = await Permission.locationWhenInUse.request();
+
+    if (status == PermissionStatus.granted) {
+      print('Permission Granted');
+    } else if (status == PermissionStatus.denied) {
+      print('Permission denied');
+    } else if (status == PermissionStatus.permanentlyDenied) {
+      print('Permission Permanently Denied');
+      await openAppSettings();
+    }
+  }
+
+  @override
+  void setState(fn) {
+    // TODO: implement setState
+    requestLocationPermission();
+    super.setState(fn);
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
