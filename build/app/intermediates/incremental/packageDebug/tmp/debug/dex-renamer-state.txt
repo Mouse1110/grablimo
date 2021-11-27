@@ -1,0 +1,4 @@
+#Sat Nov 27 13:07:48 ICT 2021
+base.0=E\:\\Git\\grablimo\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
