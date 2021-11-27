@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_my_train/src/controller/booking/booking.dart';
+import 'package:flutter_my_train/src/model/otd/book.dart';
+import 'package:flutter_my_train/src/utils/push.dart';
+import 'package:flutter_my_train/src/views/book/bill.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class BookPosition extends StatelessWidget {
+class BookPosition extends StatefulWidget {
   const BookPosition({Key key}) : super(key: key);
 
+  @override
+  State<BookPosition> createState() => _BookPositionState();
+}
+
+class _BookPositionState extends State<BookPosition> {
+  List<String> char = [];
+  BookingController _controller;
   Widget contaiPos({Color color, String title}) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -109,17 +120,46 @@ class BookPosition extends StatelessWidget {
           ],
         ),
       );
-  Widget pos({Color color, String title}) => Container(
-      width: 32,
-      height: 32,
-      decoration:
-          BoxDecoration(color: color, borderRadius: BorderRadius.circular(4)),
-      child: Center(
-          child: Text(title,
-              style: GoogleFonts.nunito(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white))));
+
+  Widget pos({
+    Color color,
+    String title,
+  }) {
+    int i = char.indexWhere((element) => element == title);
+    print(i);
+    if (i > -1) {
+      color = const Color.fromRGBO(255, 227, 80, 1);
+    } else {
+      color = const Color.fromRGBO(32, 215, 39, 1);
+    }
+    return GestureDetector(
+      onTap: () {
+        int i = char.indexWhere((element) => element == title);
+        print(i);
+        if (i > -1) {
+          color = const Color.fromRGBO(32, 215, 39, 1);
+          char.removeAt(i);
+        } else {
+          print(i);
+          color = const Color.fromRGBO(88, 145, 255, 1);
+          char.add(title);
+        }
+        setState(() {});
+      },
+      child: Container(
+          width: 32,
+          height: 32,
+          decoration: BoxDecoration(
+              color: color, borderRadius: BorderRadius.circular(4)),
+          child: Center(
+              child: Text(title,
+                  style: GoogleFonts.nunito(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white)))),
+    );
+  }
+
   Widget scaffold({Size size}) => SafeArea(
           child: Scaffold(
         body: Container(
@@ -157,16 +197,16 @@ class BookPosition extends StatelessWidget {
                               children: [
                                 pos(
                                     color: const Color.fromRGBO(32, 215, 39, 1),
-                                    title: 'A1'),
+                                    title: 'A${index}'),
                                 pos(
                                     color: const Color.fromRGBO(32, 215, 39, 1),
-                                    title: 'A1'),
+                                    title: 'B${index}'),
                                 pos(
                                     color: const Color.fromRGBO(32, 215, 39, 1),
-                                    title: 'A1'),
+                                    title: 'C${index}'),
                                 pos(
                                     color: const Color.fromRGBO(32, 215, 39, 1),
-                                    title: 'A1'),
+                                    title: 'D${index}'),
                               ],
                             ),
                             const SizedBox(
@@ -226,7 +266,7 @@ class BookPosition extends StatelessWidget {
                                   color: Colors.black.withOpacity(0.7)),
                             ),
                             Text(
-                              '2',
+                              '${char.length}',
                               style: GoogleFonts.nunito(
                                   fontSize: 18, fontWeight: FontWeight.w700),
                             ),
@@ -247,56 +287,67 @@ class BookPosition extends StatelessWidget {
                                   color: Colors.black.withOpacity(0.7)),
                             ),
                             Text(
-                              '400.000đ',
+                              '${char.length * 200}.000đ',
                               style: GoogleFonts.nunito(
                                   fontSize: 18, fontWeight: FontWeight.w700),
                             ),
                           ],
                         ),
-                        Container(
-                          width: 100,
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: const Color.fromRGBO(255, 152, 94, 1),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Row(
-                            children: [
-                              const SizedBox(
-                                width: 4,
-                              ),
-                              Container(
-                                width: 32,
-                                height: 32,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(12),
+                        GestureDetector(
+                          onTap: () {
+                            BookOTD book = _controller.model.book;
+                            book.char = char;
+                            _controller.addLocation(book);
+                            Push.nextClientSave(
+                              context: context,
+                              page: BookBill(),
+                            );
+                          },
+                          child: Container(
+                            width: 100,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: const Color.fromRGBO(255, 152, 94, 1),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Row(
+                              children: [
+                                const SizedBox(
+                                  width: 4,
                                 ),
-                                child: Container(
-                                  margin: EdgeInsets.all(8),
+                                Container(
+                                  width: 32,
+                                  height: 32,
                                   decoration: BoxDecoration(
-                                      color:
-                                          const Color.fromRGBO(255, 152, 94, 1),
-                                      shape: BoxShape.circle),
-                                  child: Image.asset(
-                                    'assets/ticket.png',
-                                    width: 16,
-                                    height: 16,
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: Container(
+                                    margin: EdgeInsets.all(8),
+                                    decoration: BoxDecoration(
+                                        color: const Color.fromRGBO(
+                                            255, 152, 94, 1),
+                                        shape: BoxShape.circle),
+                                    child: Image.asset(
+                                      'assets/ticket.png',
+                                      width: 16,
+                                      height: 16,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 4,
-                              ),
-                              Text(
-                                'Mua vé',
-                                style: GoogleFonts.nunito(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                                const SizedBox(
+                                  width: 4,
                                 ),
-                              )
-                            ],
+                                Text(
+                                  'Mua vé',
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -308,6 +359,12 @@ class BookPosition extends StatelessWidget {
           ),
         ),
       ));
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller = BookingController(context: context);
+  }
 
   @override
   Widget build(BuildContext context) {
