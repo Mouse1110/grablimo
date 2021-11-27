@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_my_train/src/utils/colors.dart';
 import 'package:flutter_my_train/src/utils/icons.dart';
-
-import 'map.dart';
-
-const _airbussize = 60.0;
-const _dotSize = 26.0;
+import 'package:flutter_my_train/src/views/staff/map.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StaffLocation extends StatefulWidget {
   const StaffLocation({Key key}) : super(key: key);
@@ -15,195 +11,177 @@ class StaffLocation extends StatefulWidget {
   _StaffLocationState createState() => _StaffLocationState();
 }
 
+List<String> phantu = ['a', 'b', 'c'];
+
 class _StaffLocationState extends State<StaffLocation> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    List<String> arr = ['a', 'b', 'c', 'd'];
-
-    double pos = 0;
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        toolbarHeight: 5,
         backgroundColor: colorAllStaff,
+        elevation: 0,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Container(
+            margin: EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: colorAllStaff,
+              border: Border.all(width: 2, color: colorStaffWhite),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Center(
+                child: Text(
+              '<',
+              style: GoogleFonts.nunito(
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+              ),
+            )),
+          ),
+        ),
+        title: Text(
+          '06/11/2020',
+          style: GoogleFonts.nunito(
+            fontWeight: FontWeight.bold,
+            fontSize: 28,
+            letterSpacing: 1,
+          ),
+        ),
       ),
       body: Stack(
         children: [
-          Positioned(
-            height: size.height * 0.32,
-            left: 0,
-            right: 0,
-            child: Container(
-              color: colorAllStaff,
-              child: Column(
-                children: [
-// DD/MM/YYYY
-                  Padding(
-                    padding: EdgeInsets.all(8),
-                    child: Text('06/11/2021',
-                        style: TextStyle(
-                            fontSize: 30,
-                            color: colorStaffWhite,
-                            fontWeight: FontWeight.w700),
-                        textAlign: TextAlign.center),
-                  ),
-                  Divider(
-                    height: 40,
-                    thickness: 2,
-                    indent: 40,
-                    endIndent: 40,
-                    color: colorStaffWhite,
-                  ),
-// Điểm đón và trả
-                  Container(
-                    height: 50,
-                    width: size.width * 0.8,
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            height: 40,
-                            alignment: Alignment.center,
-                            child: Container(
-                              child: TabButton(
-                                title: 'Điểm đón',
-                                selected: true,
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 10),
-                        Expanded(
-                          child: Container(
-                            height: 40,
-                            alignment: Alignment.center,
-                            child: Container(
-                              child: TabButton(
-                                title: 'Điểm trả',
-                                selected: false,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-// Icon back
-          Positioned(
-            top: 5,
-            left: 20,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: colorStaffWhite),
-                  borderRadius: BorderRadius.circular(5),
+          Container(
+            height: double.infinity,
+            width: double.infinity,
+            color: colorAllStaff,
+            child: Column(
+              children: [
+                Divider(
+                  height: 20,
+                  thickness: 2,
+                  indent: 40,
+                  endIndent: 40,
+                  color: colorStaffWhite,
                 ),
-                child: Icon(Icons.keyboard_arrow_left_outlined,
-                    size: 30, color: colorStaffWhite),
-              ),
-            ),
-          ),
-// Container
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0.0,
-            top: size.height * 0.36 / 2,
-            child: Container(
-              decoration: BoxDecoration(
-                color: colorStaffWhite,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
-                ),
-              ),
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  final centerDot = constraints.maxWidth / 2 - _dotSize / 2;
-                  return Stack(
+// Điểm đoán và trả
+                Container(
+                  height: 60,
+                  width: double.infinity,
+                  margin: EdgeInsets.symmetric(horizontal: 30),
+                  child: Row(
                     children: [
-                      Positioned(
-                        left: constraints.maxWidth / 2 - _airbussize / 2,
-                        top: 10,
-                        bottom: 0.0,
-                        child: BusTimeLine(),
-                      ),
-                      Positioned(
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0.0,
+                      Expanded(
                         child: Container(
-                          child: Stack(
-                              children: arr.map((e) {
-                            pos += 100;
-                            return (pos / 100) % 2 != 1
-                                ? Positioned(
-                                    right: centerDot,
-                                    top: pos,
-                                    child: TimeLineDot(
-                                      left: true,
-                                    ),
-                                  )
-                                : Positioned(
-                                    left: centerDot,
-                                    top: pos,
-                                    child: TimeLineDot(
-                                      left: false,
-                                    ),
-                                  );
-                          }).toList()),
+                          height: 40,
+                          alignment: Alignment.center,
+                          child: Container(
+                            child: TabButton(
+                              title: 'Điểm đón',
+                              selected: true,
+                            ),
+                          ),
                         ),
                       ),
-                      Container(
-                        padding: EdgeInsets.only(bottom: 20),
-                        child: Align(
-                          alignment: Alignment.bottomCenter,
+                      SizedBox(width: 40),
+                      Expanded(
+                        child: Container(
+                          height: 40,
+                          alignment: Alignment.center,
                           child: Container(
-                            height: 50,
-                            width: 200,
-                            decoration: BoxDecoration(
-                                color: colorAllStaff,
-                                borderRadius: BorderRadius.circular(5)),
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => StaffMap(),
-                                    ));
-                              },
-                              child: Center(
-                                child: Text('Xem trên bảng đồ',
-                                    style: TextStyle(
-                                        color: colorStaffWhite,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w700)),
-                              ),
+                            child: TabButton(
+                              title: 'Điểm trả',
+                              selected: false,
                             ),
                           ),
                         ),
                       ),
                     ],
-                  );
-                },
-              ),
+                  ),
+                ),
+                const SizedBox(height: 15),
+// Location
+                Expanded(
+                  child: Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: colorStaffWhite,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30),
+                          topRight: Radius.circular(30),
+                        )),
+                    child: Column(
+                      children: [
+// Bus Icon
+                        SizedBox(height: 15),
+                        _buildBusIcon(),
+                        SizedBox(height: 15),
+// Location thong tin
+                        Expanded(
+                          child: ListView.builder(
+                            itemCount: phantu.length,
+                            itemBuilder: (context, index) {
+                              return Column(
+                                children: [
+                                  TimeLineDot(
+                                    index: 0,
+                                  ),
+                                  TimeLineDot(
+                                    index: 1,
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 40),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StaffMap(),
+                      ));
+                },
+                child: Container(
+                  height: 50,
+                  width: 200,
+                  child: Center(
+                      child: Text('Xem trên bản đồ',
+                          style: GoogleFonts.nunito(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: colorStaffWhite))),
+                  decoration: BoxDecoration(
+                      color: colorAllStaff.withOpacity(0.75),
+                      borderRadius: BorderRadius.circular(10)),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
   }
+
+  Widget _buildBusIcon() => SizedBox(
+        child: Container(
+          height: 60,
+          width: 60,
+          child: Image.asset(iconBus),
+        ),
+      );
 }
 
 class TabButton extends StatelessWidget {
@@ -219,207 +197,318 @@ class TabButton extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(
-              color: selected ? colorStaffWhite : colorStaffWhite,
-              fontSize: 18,
-              fontWeight: FontWeight.w700),
+          style: GoogleFonts.nunito(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: colorStaffWhite),
         ),
-        if (selected)
-          Container(
-            height: 5,
-            width: 40,
-            color: colorStaffWhite,
-          )
+        if (selected) Container(height: 7, width: 40, color: colorStaffWhite)
       ],
-    );
-  }
-}
-
-/// xe buss
-class BusTimeLine extends StatelessWidget {
-  const BusTimeLine({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      child: Column(
-        children: [
-          Container(
-            height: 60,
-            width: 60,
-            child: Image.asset(iconBus),
-          ),
-          Expanded(
-              child: Container(
-            width: 5,
-            color: colorAllStaff,
-          ))
-        ],
-      ),
     );
   }
 }
 
 class TimeLineDot extends StatelessWidget {
-  final bool left;
-  TimeLineDot({Key key, this.left}) : super(key: key);
+  int index = 0;
+  TimeLineDot({Key key, this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
-      if (left) ...[
-        Container(
-          height: 130,
-          width: 165,
-          padding: EdgeInsets.symmetric(horizontal: 5),
-          decoration: BoxDecoration(
-            border: Border.all(width: 0.2),
-            color: colorStaffWhite,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(1),
-                spreadRadius: 1,
-                blurRadius: 7,
-                offset: Offset(0, 2),
-              ),
-            ],
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                child: Text('1 A, Huynh Van Nghe, Biên Hòa, Đồng Nai',
-                    style: TextStyle(fontSize: 12)),
-              ),
-              Container(
-                width: double.infinity,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Nguyễn Long Bá',
-                        style: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w700)),
-                    Text('0382292563', style: TextStyle(fontSize: 12)),
-                  ],
+    Size size = MediaQuery.of(context).size;
+
+    return SizedBox(
+      height: 140,
+      width: double.infinity,
+      child: (index % 2 == 0)
+          ? Row(
+              children: [
+                SizedBox(
+                  width: size.width * 0.48,
+                  child: Container(),
                 ),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                Expanded(
+                  child: Container(
+                    height: double.infinity,
+                    width: double.infinity,
+                    child: Stack(
                       children: [
-                        Text('Thơi gian', style: TextStyle(fontSize: 10)),
-                        Text('18h30',
-                            style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w700))
+                        Row(
+                          children: [
+                            SizedBox(width: size.width * 0.015),
+// thanh duong di
+                            Container(
+                              height: double.infinity,
+                              width: size.width * 0.01,
+                              color: colorAllStaff,
+                            ),
+                            Container(
+                              height: 2,
+                              width: size.width * 0.05,
+                              color: Colors.black,
+                            ),
+                            Expanded(
+                              child: Container(
+                                margin: EdgeInsets.only(right: 10),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 10),
+                                decoration: BoxDecoration(
+                                    color: colorStaffWhite,
+                                    borderRadius: BorderRadius.circular(24),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.25),
+                                        offset: Offset(0, 4),
+                                        blurRadius: 4,
+                                      ),
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.25),
+                                        offset: Offset(0, -4),
+                                        blurRadius: 4,
+                                      )
+                                    ]),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      '1 A, Huynh Van Nghe, Biên Hòa, Đồng Nai',
+                                      style: GoogleFonts.nunito(
+                                          fontSize: 12,
+                                          color: Colors.black.withOpacity(0.7),
+                                          fontStyle: FontStyle.italic),
+                                    ),
+                                    Text("Nguyễn Long Bá",
+                                        style: GoogleFonts.nunito(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                        )),
+                                    Text('0382292563'),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Thời gian',
+                                              style: GoogleFonts.nunito(
+                                                  fontSize: 10,
+                                                  color: Colors.black
+                                                      .withOpacity(0.7)),
+                                            ),
+                                            Text('18h30',
+                                                style: GoogleFonts.nunito(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                )),
+                                          ],
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Còn lại',
+                                              style: GoogleFonts.nunito(
+                                                  fontSize: 10,
+                                                  color: Colors.black
+                                                      .withOpacity(0.7)),
+                                            ),
+                                            Text('18h30',
+                                                style: GoogleFonts.nunito(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                )),
+                                          ],
+                                        ),
+                                        Column(
+                                          children: [
+                                            SizedBox(height: 12),
+                                            Text(
+                                              'Liên hệ >>',
+                                              style: GoogleFonts.nunito(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.black
+                                                      .withOpacity(0.7)),
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+// Positione time line dot
+                        Positioned(
+                            top: 0,
+                            left: 0,
+                            bottom: 0,
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Container(
+                                  height: size.height * 0.04,
+                                  width: size.width * 0.04,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    shape: BoxShape.circle,
+                                  )),
+                            ))
                       ],
                     ),
                   ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                )
+              ],
+            )
+          : Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    height: double.infinity,
+                    width: double.infinity,
+                    child: Stack(
                       children: [
-                        Text('Còn lại', style: TextStyle(fontSize: 10)),
-                        Text('3p',
-                            style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w700))
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Container(
+                                margin: EdgeInsets.only(left: 10),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 10),
+                                decoration: BoxDecoration(
+                                    color: colorStaffWhite,
+                                    borderRadius: BorderRadius.circular(24),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.25),
+                                        offset: Offset(0, 4),
+                                        blurRadius: 4,
+                                      ),
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.25),
+                                        offset: Offset(0, -4),
+                                        blurRadius: 4,
+                                      )
+                                    ]),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      '1 A, Huynh Van Nghe, Biên Hòa, Đồng Nai',
+                                      style: GoogleFonts.nunito(
+                                          fontSize: 12,
+                                          color: Colors.black.withOpacity(0.7),
+                                          fontStyle: FontStyle.italic),
+                                    ),
+                                    Text("Nguyễn Long Bá",
+                                        style: GoogleFonts.nunito(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                        )),
+                                    Text('0382292563'),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Thời gian',
+                                              style: GoogleFonts.nunito(
+                                                  fontSize: 10,
+                                                  color: Colors.black
+                                                      .withOpacity(0.7)),
+                                            ),
+                                            Text('18h30',
+                                                style: GoogleFonts.nunito(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                )),
+                                          ],
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Còn lại',
+                                              style: GoogleFonts.nunito(
+                                                  fontSize: 10,
+                                                  color: Colors.black
+                                                      .withOpacity(0.7)),
+                                            ),
+                                            Text('18h30',
+                                                style: GoogleFonts.nunito(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                )),
+                                          ],
+                                        ),
+                                        Column(
+                                          children: [
+                                            SizedBox(height: 12),
+                                            Text(
+                                              'Liên hệ >>',
+                                              style: GoogleFonts.nunito(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.black
+                                                      .withOpacity(0.7)),
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: 2,
+                              width: size.width * 0.05,
+                              color: Colors.black,
+                            ),
+                            Container(
+                              height: double.infinity,
+                              width: size.width * 0.01,
+                              color: colorAllStaff,
+                            ),
+                            SizedBox(width: size.width * 0.015),
+                          ],
+                        ),
+                        Positioned(
+                            top: 0,
+                            right: 0,
+                            bottom: 0,
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Container(
+                                  height: size.height * 0.04,
+                                  width: size.width * 0.04,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    shape: BoxShape.circle,
+                                  )),
+                            ))
                       ],
                     ),
                   ),
-                  Container(
-                      child: Text('Liên hệ >>', style: TextStyle(fontSize: 10)))
-                ],
-              )
-            ],
-          ),
-        ),
-        Container(
-          width: 20,
-          height: 2,
-          color: Colors.black,
-        ),
-      ],
-      Container(
-        height: _dotSize,
-        width: _dotSize,
-        decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.black),
-      ),
-      if (!left) ...[
-        Container(
-          width: 20,
-          height: 2,
-          color: Colors.black,
-        ),
-        Container(
-          height: 130,
-          width: 165,
-          padding: EdgeInsets.symmetric(horizontal: 5),
-          decoration: BoxDecoration(
-            border: Border.all(width: 0.2),
-            color: colorStaffWhite,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(1),
-                spreadRadius: 1,
-                blurRadius: 7,
-                offset: Offset(0, 2),
-              ),
-            ],
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                child: Text('1 A, Huynh Van Nghe, Biên Hòa, Đồng Nai',
-                    style: TextStyle(fontSize: 12)),
-              ),
-              Container(
-                width: double.infinity,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Nguyen Long Ba',
-                        style: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w700)),
-                    Text('0789429140', style: TextStyle(fontSize: 12)),
-                  ],
                 ),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Thoi gian', style: TextStyle(fontSize: 10)),
-                        Text('18h30',
-                            style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w700))
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Con lai', style: TextStyle(fontSize: 10)),
-                        Text('3p',
-                            style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w700))
-                      ],
-                    ),
-                  ),
-                  Container(
-                      child: Text('Lien he >>', style: TextStyle(fontSize: 10)))
-                ],
-              )
-            ],
-          ),
-        ),
-      ],
-    ]);
+                SizedBox(
+                  width: size.width * 0.48,
+                ),
+              ],
+            ),
+    );
   }
 }

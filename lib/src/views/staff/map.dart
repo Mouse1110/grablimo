@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_google_maps/flutter_google_maps.dart';
 import 'package:flutter_my_train/src/utils/colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class StaffMap extends StatefulWidget {
@@ -105,128 +106,168 @@ class _StaffMapState extends State<StaffMap> {
                   ),
                 ),
               ),
-              Container(
-                padding: EdgeInsets.only(bottom: 50),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 50),
                   child: Container(
-                      height: size.height * 0.2,
-                      width: size.width * 0.9,
-                      decoration: BoxDecoration(
-                        color: colorStaffWhite,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Column(
-                        children: [
-                          Container(
-                            height: size.height * 0.1,
-
-                            /// Uu tien
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 10, top: 10),
-                                  child: Expanded(
-                                    child: Container(
-                                      width: 100,
-                                      alignment: Alignment.topRight,
-                                      child: Action(
-                                        color: Colors.blue,
-                                        text: 'Ưu tiên',
+                    height: size.height * 0.2,
+                    width: size.width * 0.9,
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    decoration: BoxDecoration(
+                      color: colorStaffWhite,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Column(
+                      children: [
+                        Expanded(
+                          child: Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(bottom: 50, right: 20),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                        height: 20,
+                                        width: 20,
+                                        margin: EdgeInsets.only(
+                                            left: 20, right: 20),
+                                        decoration: BoxDecoration(
+                                          color: Colors.blue,
+                                          shape: BoxShape.circle,
+                                        )),
+                                    Text(
+                                      'Ưu tiên',
+                                      style: GoogleFonts.nunito(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Nguyễn Long Bá',
+                                      style: GoogleFonts.nunito(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
                                       ),
                                     ),
-                                  ),
-                                ),
-                                SizedBox(width: 20),
-                                //Thong tin
-                                Expanded(
-                                  child: Container(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 10),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                    Text(
+                                      '0382292563',
+                                      style: GoogleFonts.nunito(
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                    Row(
                                       children: [
-                                        Text('Nguyễn Long Bá',
-                                            style: TextStyle(
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w700)),
-                                        Text('0382292563'),
                                         Row(
                                           children: [
-                                            FittedBox(
-                                              child: Text('Số vé: 2',
-                                                  style: TextStyle(
-                                                    fontSize: 14,
-                                                  )),
-                                            ),
-                                            SizedBox(width: 15),
-                                            FittedBox(
-                                              child: Text(
-                                                'Thanh toán: chưa',
-                                                style: TextStyle(
-                                                  fontSize: 14,
-                                                ),
-                                                maxLines: null,
-                                              ),
-                                            ),
+                                            Text('Số vé: '),
+                                            Text('2'),
+                                          ],
+                                        ),
+                                        SizedBox(width: 10),
+                                        Row(
+                                          children: [
+                                            Text('Thanh toán: '),
+                                            Text('chưa'),
                                           ],
                                         )
                                       ],
                                     ),
-                                  ),
-                                )
-                              ],
-                            ),
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
-                          Container(
-                            height: size.height * 0.1,
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: Column(
+                        ),
+                        Expanded(
+                          child: Row(
+                            children: [
+                              Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Action(
-                                        text: 'Đã vượt',
-                                        color: Colors.red,
-                                      ),
-                                      Action(
-                                        text: 'Ưu tiên',
-                                        color: Colors.yellow,
+                                      Container(
+                                          height: 20,
+                                          width: 20,
+                                          margin: EdgeInsets.only(
+                                              left: 20, right: 20),
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: Colors.red,
+                                          )),
+                                      Text(
+                                        'Đã vượt',
+                                        style: GoogleFonts.nunito(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),
-                                ),
-                                SizedBox(width: 100),
-                                Expanded(
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                          height: 20,
+                                          width: 20,
+                                          margin: EdgeInsets.only(
+                                              left: 20, right: 20),
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: Colors.yellow,
+                                          )),
+                                      Text(
+                                        'Ưu tiên',
+                                        style: GoogleFonts.nunito(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                              Expanded(
+                                child: Container(
+                                  alignment: Alignment.centerRight,
+                                  padding: EdgeInsets.only(right: 30),
+                                  height: size.height,
                                   child: Container(
-                                    height: 40,
+                                    height: 50,
+                                    width: 110,
                                     decoration: BoxDecoration(
                                       color: colorAllStaff,
-                                      borderRadius: BorderRadius.circular(10),
+                                      borderRadius: BorderRadius.circular(12),
                                     ),
                                     child: Center(
                                       child: Text(
                                         'Liên hệ',
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w700,
-                                          color: colorStaffWhite,
+                                        style: GoogleFonts.nunito(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
+                              )
+                            ],
                           ),
-                        ],
-                      )),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -259,3 +300,113 @@ class Action extends StatelessWidget {
     );
   }
 }
+// child: Column(
+//   children: [
+//     Container(
+//       height: size.height * 0.1,
+
+//       /// Uu tien
+//       child: Row(
+//         children: [
+//           Padding(
+//             padding: EdgeInsets.only(left: 10, top: 10),
+//             child: Expanded(
+//               child: Container(
+//                 width: 100,
+//                 alignment: Alignment.topRight,
+//                 child: Action(
+//                   color: Colors.blue,
+//                   text: 'Ưu tiên',
+//                 ),
+//               ),
+//             ),
+//           ),
+//           SizedBox(width: 20),
+//           //Thong tin
+//           Expanded(
+//             child: Container(
+//               padding:
+//                   EdgeInsets.symmetric(horizontal: 10),
+//               child: Column(
+//                 mainAxisAlignment:
+//                     MainAxisAlignment.spaceEvenly,
+//                 crossAxisAlignment:
+//                     CrossAxisAlignment.start,
+//                 children: [
+//                   Text('Nguyễn Long Bá',
+//                       style: TextStyle(
+//                           fontSize: 16,
+//                           fontWeight: FontWeight.w700)),
+//                   Text('0382292563'),
+//                   Row(
+//                     children: [
+//                       FittedBox(
+//                         child: Text('Số vé: 2',
+//                             style: TextStyle(
+//                               fontSize: 14,
+//                             )),
+//                       ),
+//                       SizedBox(width: 15),
+//                       FittedBox(
+//                         child: Text(
+//                           'Thanh toán: chưa',
+//                           style: TextStyle(
+//                             fontSize: 14,
+//                           ),
+//                           maxLines: null,
+//                         ),
+//                       ),
+//                     ],
+//                   )
+//                 ],
+//               ),
+//             ),
+//           )
+//         ],
+//       ),
+//     ),
+//     Container(
+//       height: size.height * 0.1,
+//       padding: EdgeInsets.symmetric(horizontal: 10),
+//       child: Row(
+//         children: [
+//           Expanded(
+//             child: Column(
+//               mainAxisAlignment:
+//                   MainAxisAlignment.spaceEvenly,
+//               children: [
+//                 Action(
+//                   text: 'Đã vượt',
+//                   color: Colors.red,
+//                 ),
+//                 Action(
+//                   text: 'Ưu tiên',
+//                   color: Colors.yellow,
+//                 )
+//               ],
+//             ),
+//           ),
+//           SizedBox(width: 100),
+//           Expanded(
+//             child: Container(
+//               height: 40,
+//               decoration: BoxDecoration(
+//                 color: colorAllStaff,
+//                 borderRadius: BorderRadius.circular(10),
+//               ),
+//               child: Center(
+//                 child: Text(
+//                   'Liên hệ',
+//                   style: TextStyle(
+//                     fontSize: 16,
+//                     fontWeight: FontWeight.w700,
+//                     color: colorStaffWhite,
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     ),
+//   ],
