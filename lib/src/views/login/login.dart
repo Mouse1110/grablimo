@@ -16,7 +16,11 @@ class _LoginState extends State<Login> {
 
   LoginController _controller;
 
-  Widget input({TextEditingController controller, String title, String hint}) =>
+  Widget input(
+          {TextEditingController controller,
+          String title,
+          String hint,
+          bool pass}) =>
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -27,6 +31,7 @@ class _LoginState extends State<Login> {
           ),
           TextField(
             controller: controller,
+            obscureText: pass,
             decoration: InputDecoration(
                 hintText: hint,
                 hintStyle: GoogleFonts.nunito(
@@ -80,6 +85,7 @@ class _LoginState extends State<Login> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     input(
+                                        pass: false,
                                         controller: _nameInput,
                                         title: 'Số điện thoại',
                                         hint: 'Nhập số điện thoại'),
@@ -87,6 +93,7 @@ class _LoginState extends State<Login> {
                                       height: 10,
                                     ),
                                     input(
+                                        pass: true,
                                         controller: _passInput,
                                         title: 'Mật khẩu',
                                         hint: 'Nhập mật khẩu của bạn'),

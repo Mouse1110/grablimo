@@ -1,323 +1,418 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_my_train/src/views/book/location.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key key}) : super(key: key);
 
-  Widget icon({String text, double size}) => Container(
-        width: size,
-        height: size,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            shape: BoxShape.circle,
-            border:
-                Border.all(width: 0.3, color: Colors.black.withOpacity(0.3))),
-        child: Center(
-          child: text != null
-              ? Text(
-                  text,
-                  style: GoogleFonts.nunito(
-                    fontSize: 8,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )
-              : SizedBox(),
-        ),
-      );
+  @override
+  State<Home> createState() => _HomeState();
+}
 
-  Widget title({String title}) => Padding(
-        padding: EdgeInsets.only(left: 10),
-        child: Text(
-          title,
-          style: GoogleFonts.nunito(
-            fontSize: 24,
-            color: Colors.white,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-      );
-
-  Widget scaffold() => SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: const Color.fromRGBO(255, 152, 94, 1),
-            leading: const SizedBox(),
-            title: Text(
-              'GRABLIMO',
-              style: GoogleFonts.nunito(
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
-                color: Colors.white,
-              ),
-            ),
-            actions: const [
-              Icon(
-                LineIcons.user,
-                size: 32,
-              )
-            ],
-            elevation: 0,
-          ),
-          body: Stack(
-            children: [
-              Container(
-                color: const Color.fromRGBO(255, 152, 94, 1),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+class _HomeState extends State<Home> {
+  TextEditingController _diemDi = TextEditingController();
+  TextEditingController _diemDen = TextEditingController();
+  Widget location(
+          {Color color,
+          String title,
+          TextEditingController controller,
+          String hint}) =>
+      Row(
+        children: [
+          Expanded(
+            child: Column(
+              children: [
+                Row(
                   children: [
-                    const SizedBox(
-                      height: 10,
-                    ),
                     Container(
-                      width: double.infinity,
-                      height: 150,
-                      margin: const EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12)),
+                      width: 20,
+                      height: 20,
+                      decoration:
+                          BoxDecoration(color: color, shape: BoxShape.circle),
                       child: Center(
-                        child: Text('22h:15p (SAO - 06/11/2021)',
-                            style: GoogleFonts.nunito(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w700,
-                            )),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      width: double.infinity,
-                      height: 70,
-                      margin: const EdgeInsets.symmetric(horizontal: 10),
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 64,
-                            child: Stack(
-                              children: [
-                                Positioned(
-                                  child: icon(size: 32),
-                                ),
-                                Positioned(
-                                  left: 16,
-                                  child: icon(size: 32),
-                                ),
-                                Positioned(
-                                  left: 32,
-                                  child: icon(text: '+0', size: 32),
-                                ),
-                              ],
-                            ),
+                        child: Container(
+                          margin: const EdgeInsets.all(4),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
                           ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Expanded(
-                              child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Thắng, Bá ... đã kết nối với bạn',
-                                style: GoogleFonts.nunito(fontSize: 16),
-                              ),
-                              Text(
-                                'Các bạn có thể đặt vé chung',
-                                style: GoogleFonts.nunito(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.black.withOpacity(0.7)),
-                              ),
-                            ],
-                          ))
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    title(title: 'Vé'),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        width: 170,
-                        height: 100,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
-                                      'SAO',
-                                      style: GoogleFonts.nunito(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w700),
-                                    ),
-                                    SizedBox(
-                                      width: 4,
-                                    ),
-                                    Column(
-                                      children: [
-                                        Text(
-                                          '400.000đ',
-                                          style: GoogleFonts.nunito(
-                                              fontSize: 10,
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.black
-                                                  .withOpacity(0.7)),
-                                        ),
-                                        const SizedBox(
-                                          height: 10,
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  width: 24,
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        child: icon(size: 16),
-                                      ),
-                                      Positioned(
-                                        left: 8,
-                                        child: icon(size: 16),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Text(
-                              '30/10/2021',
-                              style: GoogleFonts.nunito(
-                                color: Colors.black.withOpacity(0.7),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            Text(
-                              '16h00 -> 16h50',
-                              style: GoogleFonts.nunito(
-                                color: Colors.black.withOpacity(0.7),
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
                         ),
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      width: 10,
                     ),
-                    title(title: 'Tin Tức'),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Center(
-                      child: Text('Hiện tại không có tin tức nào'),
+                    Text(
+                      title,
+                      style: GoogleFonts.nunito(
+                          fontSize: 10, color: Colors.black.withOpacity(0.5)),
                     )
                   ],
                 ),
-              ),
-              Positioned(
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  child: SizedBox(
-                    height: 100,
-                    width: double.infinity,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          bottom: 0,
-                          right: 0,
-                          left: 0,
-                          child: Container(
-                            width: double.infinity,
-                            height: 70,
-                            padding: EdgeInsets.symmetric(horizontal: 20),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(24),
-                                  topRight: Radius.circular(24)),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Icon(
-                                  LineIcons.home,
-                                  color: Colors.black,
-                                  size: 40,
-                                ),
-                                Icon(
-                                  LineIcons.user,
-                                  color: Colors.black,
-                                  size: 40,
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                            top: 0,
-                            left: 0,
-                            right: 0,
-                            child: Container(
-                              width: 70,
-                              height: 70,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  shape: BoxShape.circle,
-                                  boxShadow: [
-                                    BoxShadow(
-                                        offset: const Offset(0, 4),
-                                        blurRadius: 4,
-                                        color: Colors.black.withOpacity(0.5))
-                                  ]),
-                              child: Container(
-                                alignment: Alignment.center,
-                                margin: const EdgeInsets.all(10),
-                                decoration: const BoxDecoration(
-                                    color: Color.fromRGBO(255, 152, 94, 1),
-                                    shape: BoxShape.circle),
-                                child: Center(
-                                  child: Image.asset(
-                                    'assets/ticket.png',
-                                    width: 32,
-                                    height: 32,
-                                  ),
-                                ),
-                              ),
-                            )),
-                      ],
+                Row(
+                  children: [
+                    const SizedBox(
+                      width: 30,
                     ),
-                  ))
-            ],
+                    Expanded(
+                        child: TextField(
+                      style: GoogleFonts.nunito(
+                          fontSize: 12, fontWeight: FontWeight.bold),
+                      decoration: InputDecoration(hintText: hint),
+                      controller: controller,
+                    ))
+                  ],
+                )
+              ],
+            ),
           ),
+          Container(
+            width: 32,
+            height: 32,
+            decoration: BoxDecoration(
+                color: Colors.grey, borderRadius: BorderRadius.circular(8)),
+            child: Center(
+              child: Image.asset(
+                'assets/location.png',
+                width: 16,
+                height: 16,
+              ),
+            ),
+          )
+        ],
+      );
+
+  Widget cardLocation() => Container(
+        width: double.infinity,
+        margin: const EdgeInsets.symmetric(horizontal: 10),
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        height: 200,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  offset: const Offset(0, -4),
+                  blurRadius: 4),
+              BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  offset: const Offset(0, 4),
+                  blurRadius: 4)
+            ]),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            location(
+                color: Color.fromRGBO(22, 191, 28, 1),
+                title: 'Điểm đi',
+                hint: 'Nhập điểm đi',
+                controller: _diemDi),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Divider(
+                height: 10,
+                thickness: 1.5,
+                color: Colors.black,
+              ),
+            ),
+            location(
+                color: Color.fromRGBO(0, 87, 255, 1),
+                title: 'Điểm đến',
+                hint: 'Nhập điểm đến',
+                controller: _diemDen),
+          ],
         ),
       );
 
+  Widget cardTicket() => Container(
+        margin: EdgeInsets.symmetric(horizontal: 10),
+        height: 250,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(24),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.black.withOpacity(0.25),
+                  offset: Offset(0, 4),
+                  blurRadius: 4),
+            ]),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Hãng xe',
+                        style: GoogleFonts.nunito(
+                            fontSize: 12, color: Colors.black.withOpacity(0.7)),
+                      ),
+                      Text(
+                        'SAO',
+                        style: GoogleFonts.nunito(
+                            fontSize: 18, fontWeight: FontWeight.w700),
+                      )
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Số vé',
+                        style: GoogleFonts.nunito(
+                            fontSize: 12, color: Colors.black.withOpacity(0.7)),
+                      ),
+                      Text(
+                        '2',
+                        style: GoogleFonts.nunito(
+                            fontSize: 18, fontWeight: FontWeight.w700),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Ngày khởi hành',
+                            style: GoogleFonts.nunito(
+                                fontSize: 12,
+                                color: Colors.black.withOpacity(0.7)),
+                          ),
+                          Text(
+                            '30/10/2021-20h30',
+                            style: GoogleFonts.nunito(
+                                fontSize: 18, fontWeight: FontWeight.w700),
+                          )
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Tổng tiền',
+                            style: GoogleFonts.nunito(
+                                fontSize: 12,
+                                color: Colors.black.withOpacity(0.7)),
+                          ),
+                          Text(
+                            '400.000đ',
+                            style: GoogleFonts.nunito(
+                                fontSize: 18, fontWeight: FontWeight.w700),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  height: 55,
+                  width: double.infinity,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(255, 152, 94, 0.25),
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(24),
+                          bottomRight: Radius.circular(24))),
+                  child: Text(
+                    'Xem thông tin vé',
+                    style: GoogleFonts.nunito(
+                        fontSize: 20, color: Colors.black.withOpacity(0.7)),
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
+      );
+
+  Widget scaffold({BuildContext context}) => SafeArea(
+        child: Scaffold(
+            resizeToAvoidBottomInset: false,
+            body: Container(
+              height: double.infinity,
+              color: Color.fromRGBO(244, 244, 244, 1),
+              child: Stack(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 20, right: 20, top: 30),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  'Chào mừng, bạn đã đến với chúng tôi',
+                                  style: GoogleFonts.nunito(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 24,
+                                      color: Colors.black),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 50,
+                              ),
+                              Icon(
+                                LineIcons.user,
+                                size: 40,
+                              )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 50,
+                          ),
+                          cardLocation(),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => BookLocation(
+                                        diemDi: _diemDi.text,
+                                        diemDen: _diemDen.text,
+                                      ),
+                                    ));
+                              },
+                              child: Container(
+                                width: 150,
+                                height: 50,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: Color.fromRGBO(255, 152, 94, 1),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Text(
+                                  'Đặt vé',
+                                  style: GoogleFonts.nunito(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          cardTicket(),
+                          const SizedBox(
+                            height: 50,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      child: Container(
+                        height: 90,
+                        width: double.infinity,
+                        child: Stack(
+                          children: [
+                            Positioned(
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                child: Container(
+                                  height: 60,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(90),
+                                      ),
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color:
+                                                Colors.black.withOpacity(0.25),
+                                            offset: Offset(0, -4),
+                                            blurRadius: 4),
+                                      ]),
+                                )),
+                            Positioned(
+                                top: 0,
+                                left: 50,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => BookLocation(
+                                            diemDi: _diemDi.text,
+                                            diemDen: _diemDen.text,
+                                          ),
+                                        ));
+                                  },
+                                  child: Container(
+                                    width: 60,
+                                    height: 60,
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        shape: BoxShape.circle),
+                                    child: Container(
+                                      margin: EdgeInsets.all(10),
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Color.fromRGBO(255, 152, 94, 1),
+                                          shape: BoxShape.circle),
+                                      child: Image.asset(
+                                        'assets/ticket.png',
+                                        width: 32,
+                                        height: 32,
+                                      ),
+                                    ),
+                                  ),
+                                ))
+                          ],
+                        ),
+                      ))
+                ],
+              ),
+            )),
+      );
+
   @override
-  Widget build(BuildContext context) => scaffold();
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _diemDen.dispose();
+    _diemDi.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => scaffold(context: context);
 }

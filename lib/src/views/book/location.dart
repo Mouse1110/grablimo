@@ -2,10 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
 
-class BookLocation extends StatelessWidget {
-  const BookLocation({Key key}) : super(key: key);
+class BookLocation extends StatefulWidget {
+  const BookLocation({Key key, this.diemDen, this.diemDi}) : super(key: key);
+  final String diemDi;
+  final String diemDen;
+  @override
+  State<BookLocation> createState() => _BookLocationState();
+}
 
-  Widget location({Color color, String title, String text}) => Row(
+class _BookLocationState extends State<BookLocation> {
+  TextEditingController _diemDi = TextEditingController();
+  TextEditingController _diemDen = TextEditingController();
+
+  Widget location(
+          {Color color,
+          String title,
+          TextEditingController controller,
+          String hint}) =>
+      Row(
         children: [
           Expanded(
             child: Column(
@@ -42,13 +56,13 @@ class BookLocation extends StatelessWidget {
                     const SizedBox(
                       width: 30,
                     ),
-                    Text(
-                      text,
+                    Expanded(
+                        child: TextField(
                       style: GoogleFonts.nunito(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    )
+                          fontSize: 12, fontWeight: FontWeight.bold),
+                      decoration: InputDecoration(hintText: hint),
+                      controller: controller,
+                    ))
                   ],
                 )
               ],
@@ -74,7 +88,7 @@ class BookLocation extends StatelessWidget {
         width: double.infinity,
         margin: const EdgeInsets.symmetric(horizontal: 10),
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        height: 130,
+        height: 200,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(12),
@@ -90,7 +104,8 @@ class BookLocation extends StatelessWidget {
             location(
                 color: Color.fromRGBO(22, 191, 28, 1),
                 title: 'Điểm đi',
-                text: 'An Dân, Tuy An, Phú Yên'),
+                hint: 'Nhập điểm đi',
+                controller: _diemDi),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Divider(
@@ -101,8 +116,8 @@ class BookLocation extends StatelessWidget {
             ),
             location(
                 color: Color.fromRGBO(0, 87, 255, 1),
-                title: 'Điểm đến',
-                text: 'Huỳnh văn nghệ, Biên Hòa, Đồng Nai'),
+                title: 'Nhập điểm đến',
+                controller: _diemDen),
           ],
         ),
       );
@@ -147,35 +162,6 @@ class BookLocation extends StatelessWidget {
                         )
                       ],
                     ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  child: Row(
-                    children: [
-                      Text(
-                        'Con người',
-                        style: GoogleFonts.nunito(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 4,
-                      ),
-                      Icon(
-                        LineIcons.caretSquareDown,
-                        size: 32,
-                      ),
-                    ],
                   ),
                 ),
                 const SizedBox(
@@ -312,7 +298,7 @@ class BookLocation extends StatelessWidget {
                         height: 30,
                       ),
                       Container(
-                        height: 200,
+                        height: 220,
                         margin: const EdgeInsets.symmetric(horizontal: 10),
                         padding:
                             EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -339,7 +325,7 @@ class BookLocation extends StatelessWidget {
                                 text2: '11/11/2021-5h30'),
                             rowCardTrain(
                                 title1: 'Tuyến đường',
-                                text1: 'Sài gòn - Bình Định',
+                                text1: 'Sài gòn - Hà Nội',
                                 title2: 'Loại xe',
                                 text2: 'Thường'),
                             Row(
@@ -426,6 +412,21 @@ class BookLocation extends StatelessWidget {
           ),
         ),
       );
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _diemDen.text = widget.diemDen;
+    _diemDi.text = widget.diemDi;
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _diemDen.dispose();
+    _diemDi.dispose();
+  }
 
   @override
   Widget build(BuildContext context) => scaffold();
