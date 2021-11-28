@@ -42,21 +42,20 @@ class _StaffMapState extends State<StaffMap> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          toolbarHeight: 5,
-          backgroundColor: colorStaffWhite,
-        ),
-        body: Container(
-          height: double.infinity,
-          width: double.infinity,
-          color: colorStaffWhite,
-          child: Stack(
-            alignment: AlignmentDirectional.topCenter,
-            children: [
-              Positioned(
-                child: Container(
+    return SafeArea(
+      child: Scaffold(
+          appBar: AppBar(
+            elevation: 0,
+            toolbarHeight: 5,
+            backgroundColor: colorStaffWhite,
+          ),
+          body: Container(
+            height: double.infinity,
+            width: double.infinity,
+            color: colorStaffWhite,
+            child: Stack(
+              children: [
+                Container(
                   child: GoogleMap(
                     key: _key,
                     initialPosition: GeoCoord(10.9531641, 106.8017787),
@@ -65,77 +64,166 @@ class _StaffMapState extends State<StaffMap> {
                     markers: markers,
                   ),
                 ),
-              ),
-              Positioned(
-                left: 20,
-                top: 10,
-                child: Container(
-                  alignment: Alignment.center,
-                  child: Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                            color: colorAllStaff,
-                            border:
-                                Border.all(width: 2, color: colorStaffWhite),
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          child: Icon(Icons.keyboard_arrow_left_outlined,
-                              size: 30, color: colorStaffWhite),
-                        ),
-                      ),
-                      SizedBox(width: 30),
-                      Container(
-                        child: FittedBox(
-                          child: Text(
-                            '22h:15p (SAO - 06/11/2021)',
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: colorAllStaff,
-                                fontWeight: FontWeight.w700),
+                Positioned(
+                  left: 20,
+                  top: 10,
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              color: colorAllStaff,
+                              border:
+                                  Border.all(width: 2, color: colorStaffWhite),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Icon(Icons.keyboard_arrow_left_outlined,
+                                size: 30, color: colorStaffWhite),
                           ),
                         ),
-                      ),
-                    ],
+                        SizedBox(width: 30),
+                        Container(
+                          child: FittedBox(
+                            child: Text(
+                              '22h:15p (SAO - 06/11/2021)',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: colorAllStaff,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 50),
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
                   child: Container(
-                    height: size.height * 0.2,
-                    width: size.width * 0.9,
+                    height: 220,
+                    margin: EdgeInsets.all(20),
                     padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                     decoration: BoxDecoration(
                       color: colorStaffWhite,
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Expanded(
-                          child: Row(
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(bottom: 50, right: 20),
-                                child: Row(
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              child: Row(
+                                children: [
+                                  Container(
+                                      height: 20,
+                                      width: 20,
+                                      decoration: BoxDecoration(
+                                        color: Colors.blue,
+                                        shape: BoxShape.circle,
+                                      )),
+                                  const SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text(
+                                    'Ưu tiên',
+                                    style: GoogleFonts.nunito(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Nguyễn Long Bá',
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  '0382292563',
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                Row(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Text('Số vé: '),
+                                        Text('2'),
+                                      ],
+                                    ),
+                                    SizedBox(width: 10),
+                                    Row(
+                                      children: [
+                                        Text('Thanh toán: '),
+                                        Text('chưa'),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
                                   children: [
                                     Container(
                                         height: 20,
                                         width: 20,
-                                        margin: EdgeInsets.only(
-                                            left: 20, right: 20),
                                         decoration: BoxDecoration(
-                                          color: Colors.blue,
                                           shape: BoxShape.circle,
+                                          color: Colors.red,
                                         )),
+                                    const SizedBox(
+                                      width: 8,
+                                    ),
+                                    Text(
+                                      'Đã vượt',
+                                      style: GoogleFonts.nunito(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    Container(
+                                        height: 20,
+                                        width: 20,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Colors.yellow,
+                                        )),
+                                    const SizedBox(
+                                      width: 8,
+                                    ),
                                     Text(
                                       'Ưu tiên',
                                       style: GoogleFonts.nunito(
@@ -143,136 +231,36 @@ class _StaffMapState extends State<StaffMap> {
                                           fontWeight: FontWeight.bold),
                                     )
                                   ],
-                                ),
+                                )
+                              ],
+                            ),
+                            Container(
+                              height: 50,
+                              width: 110,
+                              decoration: BoxDecoration(
+                                color: colorAllStaff,
+                                borderRadius: BorderRadius.circular(12),
                               ),
-                              Expanded(
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Nguyễn Long Bá',
-                                      style: GoogleFonts.nunito(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      '0382292563',
-                                      style: GoogleFonts.nunito(
-                                        fontSize: 18,
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Text('Số vé: '),
-                                            Text('2'),
-                                          ],
-                                        ),
-                                        SizedBox(width: 10),
-                                        Row(
-                                          children: [
-                                            Text('Thanh toán: '),
-                                            Text('chưa'),
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          child: Row(
-                            children: [
-                              Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Container(
-                                          height: 20,
-                                          width: 20,
-                                          margin: EdgeInsets.only(
-                                              left: 20, right: 20),
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: Colors.red,
-                                          )),
-                                      Text(
-                                        'Đã vượt',
-                                        style: GoogleFonts.nunito(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold),
-                                      )
-                                    ],
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Container(
-                                          height: 20,
-                                          width: 20,
-                                          margin: EdgeInsets.only(
-                                              left: 20, right: 20),
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: Colors.yellow,
-                                          )),
-                                      Text(
-                                        'Ưu tiên',
-                                        style: GoogleFonts.nunito(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                              Expanded(
-                                child: Container(
-                                  alignment: Alignment.centerRight,
-                                  padding: EdgeInsets.only(right: 30),
-                                  height: size.height,
-                                  child: Container(
-                                    height: 50,
-                                    width: 110,
-                                    decoration: BoxDecoration(
-                                      color: colorAllStaff,
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        'Liên hệ',
-                                        style: GoogleFonts.nunito(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
+                              child: Center(
+                                child: Text(
+                                  'Liên hệ',
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                              )
-                            ],
-                          ),
+                              ),
+                            )
+                          ],
                         ),
                       ],
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        ));
+              ],
+            ),
+          )),
+    );
   }
 }
 
@@ -300,113 +288,3 @@ class Action extends StatelessWidget {
     );
   }
 }
-// child: Column(
-//   children: [
-//     Container(
-//       height: size.height * 0.1,
-
-//       /// Uu tien
-//       child: Row(
-//         children: [
-//           Padding(
-//             padding: EdgeInsets.only(left: 10, top: 10),
-//             child: Expanded(
-//               child: Container(
-//                 width: 100,
-//                 alignment: Alignment.topRight,
-//                 child: Action(
-//                   color: Colors.blue,
-//                   text: 'Ưu tiên',
-//                 ),
-//               ),
-//             ),
-//           ),
-//           SizedBox(width: 20),
-//           //Thong tin
-//           Expanded(
-//             child: Container(
-//               padding:
-//                   EdgeInsets.symmetric(horizontal: 10),
-//               child: Column(
-//                 mainAxisAlignment:
-//                     MainAxisAlignment.spaceEvenly,
-//                 crossAxisAlignment:
-//                     CrossAxisAlignment.start,
-//                 children: [
-//                   Text('Nguyễn Long Bá',
-//                       style: TextStyle(
-//                           fontSize: 16,
-//                           fontWeight: FontWeight.w700)),
-//                   Text('0382292563'),
-//                   Row(
-//                     children: [
-//                       FittedBox(
-//                         child: Text('Số vé: 2',
-//                             style: TextStyle(
-//                               fontSize: 14,
-//                             )),
-//                       ),
-//                       SizedBox(width: 15),
-//                       FittedBox(
-//                         child: Text(
-//                           'Thanh toán: chưa',
-//                           style: TextStyle(
-//                             fontSize: 14,
-//                           ),
-//                           maxLines: null,
-//                         ),
-//                       ),
-//                     ],
-//                   )
-//                 ],
-//               ),
-//             ),
-//           )
-//         ],
-//       ),
-//     ),
-//     Container(
-//       height: size.height * 0.1,
-//       padding: EdgeInsets.symmetric(horizontal: 10),
-//       child: Row(
-//         children: [
-//           Expanded(
-//             child: Column(
-//               mainAxisAlignment:
-//                   MainAxisAlignment.spaceEvenly,
-//               children: [
-//                 Action(
-//                   text: 'Đã vượt',
-//                   color: Colors.red,
-//                 ),
-//                 Action(
-//                   text: 'Ưu tiên',
-//                   color: Colors.yellow,
-//                 )
-//               ],
-//             ),
-//           ),
-//           SizedBox(width: 100),
-//           Expanded(
-//             child: Container(
-//               height: 40,
-//               decoration: BoxDecoration(
-//                 color: colorAllStaff,
-//                 borderRadius: BorderRadius.circular(10),
-//               ),
-//               child: Center(
-//                 child: Text(
-//                   'Liên hệ',
-//                   style: TextStyle(
-//                     fontSize: 16,
-//                     fontWeight: FontWeight.w700,
-//                     color: colorStaffWhite,
-//                   ),
-//                 ),
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     ),
-//   ],

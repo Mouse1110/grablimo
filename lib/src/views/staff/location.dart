@@ -11,82 +11,95 @@ class StaffLocation extends StatefulWidget {
   _StaffLocationState createState() => _StaffLocationState();
 }
 
-List<String> phantu = ['a', 'b', 'c'];
-
 class _StaffLocationState extends State<StaffLocation> {
+  List<String> phantu = ['a', 'b', 'c', 'c', 'c', 'c'];
+  double _posTop;
+  int _init = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: colorAllStaff,
-        elevation: 0,
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Container(
-            margin: EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: colorAllStaff,
-              border: Border.all(width: 2, color: colorStaffWhite),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Center(
-                child: Text(
-              '<',
-              style: GoogleFonts.nunito(
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
+    if (_init == 0) {
+      _posTop = MediaQuery.of(context).size.height;
+    } else if (_init == 1) {
+      _posTop = 0;
+    }
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: colorAllStaff,
+          elevation: 0,
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              margin: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: colorAllStaff,
+                border: Border.all(width: 2, color: colorStaffWhite),
+                borderRadius: BorderRadius.circular(10),
               ),
-            )),
-          ),
-        ),
-        title: Text(
-          '06/11/2020',
-          style: GoogleFonts.nunito(
-            fontWeight: FontWeight.bold,
-            fontSize: 28,
-            letterSpacing: 1,
-          ),
-        ),
-      ),
-      body: Stack(
-        children: [
-          Container(
-            height: double.infinity,
-            width: double.infinity,
-            color: colorAllStaff,
-            child: Column(
-              children: [
-                Divider(
-                  height: 20,
-                  thickness: 2,
-                  indent: 40,
-                  endIndent: 40,
-                  color: colorStaffWhite,
+              child: Center(
+                  child: Text(
+                '<',
+                style: GoogleFonts.nunito(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
                 ),
-// Điểm đoán và trả
-                Container(
-                  height: 60,
-                  width: double.infinity,
-                  margin: EdgeInsets.symmetric(horizontal: 30),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          height: 40,
-                          alignment: Alignment.center,
+              )),
+            ),
+          ),
+          centerTitle: true,
+          title: Text(
+            '06/11/2020',
+            style: GoogleFonts.nunito(
+              fontWeight: FontWeight.bold,
+              fontSize: 24,
+              letterSpacing: 1,
+            ),
+          ),
+        ),
+        body: Stack(
+          children: [
+            Container(
+              height: double.infinity,
+              width: double.infinity,
+              color: colorAllStaff,
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Divider(
+                    thickness: 2,
+                    indent: 40,
+                    endIndent: 40,
+                    color: colorStaffWhite,
+                  ),
+                  // Điểm đoán và trả
+                  Container(
+                    height: 60,
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(horizontal: 60),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            _init = 1;
+                            setState(() {});
+                          },
                           child: Container(
-                            child: TabButton(
-                              title: 'Điểm đón',
-                              selected: true,
+                            height: 40,
+                            alignment: Alignment.center,
+                            child: Container(
+                              child: TabButton(
+                                title: 'Điểm đón',
+                                selected: true,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(width: 40),
-                      Expanded(
-                        child: Container(
+                        Container(
                           height: 40,
                           alignment: Alignment.center,
                           child: Container(
@@ -96,81 +109,99 @@ class _StaffLocationState extends State<StaffLocation> {
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 15),
-// Location
-                Expanded(
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        color: colorStaffWhite,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          topRight: Radius.circular(30),
-                        )),
-                    child: Column(
-                      children: [
-// Bus Icon
-                        SizedBox(height: 15),
-                        _buildBusIcon(),
-                        SizedBox(height: 15),
-// Location thong tin
-                        Expanded(
-                          child: ListView.builder(
-                            itemCount: phantu.length,
-                            itemBuilder: (context, index) {
-                              return Column(
-                                children: [
-                                  TimeLineDot(
-                                    index: 0,
-                                  ),
-                                  TimeLineDot(
-                                    index: 1,
-                                  ),
-                                ],
-                              );
-                            },
-                          ),
-                        ),
                       ],
                     ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 40),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => StaffMap(),
-                      ));
-                },
-                child: Container(
-                  height: 50,
-                  width: 200,
-                  child: Center(
-                      child: Text('Xem trên bản đồ',
-                          style: GoogleFonts.nunito(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: colorStaffWhite))),
-                  decoration: BoxDecoration(
-                      color: colorAllStaff.withOpacity(0.75),
-                      borderRadius: BorderRadius.circular(10)),
-                ),
+                  const SizedBox(height: 10),
+                  // Location
+                  Expanded(
+                    child: Container(
+                      height: double.infinity,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: colorStaffWhite,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            topRight: Radius.circular(30),
+                          )),
+                      child: Stack(
+                        children: [
+                          AnimatedPositioned(
+                            duration: Duration(milliseconds: 2000),
+                            curve: Curves.fastLinearToSlowEaseIn,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            top: _posTop,
+                            child: Column(
+                              children: [
+                                // Bus Icon
+                                SizedBox(height: 10),
+                                _buildBusIcon(),
+                                SizedBox(height: 10),
+                                // Location thong tin
+                                Expanded(
+                                  child: ListView.builder(
+                                    itemCount: phantu.length,
+                                    itemBuilder: (context, index) {
+                                      return Column(
+                                        children: [
+                                          if (index == 0)
+                                            const SizedBox(
+                                              height: 10,
+                                            ),
+                                          TimeLineDot(
+                                            index: index,
+                                          ),
+                                          if (index == phantu.length - 1)
+                                            const SizedBox(
+                                              height: 100,
+                                            ),
+                                        ],
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          )
-        ],
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 40),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StaffMap(),
+                        ));
+                  },
+                  child: Container(
+                    height: 50,
+                    width: 200,
+                    child: Center(
+                        child: Text('Xem trên bản đồ',
+                            style: GoogleFonts.nunito(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: colorStaffWhite))),
+                    decoration: BoxDecoration(
+                        color: colorAllStaff.withOpacity(0.75),
+                        borderRadius: BorderRadius.circular(10)),
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -209,7 +240,7 @@ class TabButton extends StatelessWidget {
 }
 
 class TimeLineDot extends StatelessWidget {
-  int index = 0;
+  final int index;
   TimeLineDot({Key key, this.index}) : super(key: key);
 
   @override
