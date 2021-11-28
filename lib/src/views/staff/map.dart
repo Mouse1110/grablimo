@@ -15,28 +15,10 @@ class _StaffMapState extends State<StaffMap> {
   GlobalKey<GoogleMapStateBase> _key = GlobalKey<GoogleMapStateBase>();
   final Set<Marker> markers = new Set();
 
-  Future<void> requestLocationPermission() async {
-    final serviceStatusLocation = await Permission.locationWhenInUse.isGranted;
-
-    bool isLocation = serviceStatusLocation == ServiceStatus.enabled;
-
-    final status = await Permission.locationWhenInUse.request();
-
-    if (status == PermissionStatus.granted) {
-      print('Permission Granted');
-    } else if (status == PermissionStatus.denied) {
-      print('Permission denied');
-    } else if (status == PermissionStatus.permanentlyDenied) {
-      print('Permission Permanently Denied');
-      await openAppSettings();
-    }
-  }
-
   @override
-  void setState(fn) {
-    // TODO: implement setState
-    requestLocationPermission();
-    super.setState(fn);
+  void initState() {
+    // TODO: implement initState
+    super.initState();
   }
 
   @override
@@ -58,9 +40,18 @@ class _StaffMapState extends State<StaffMap> {
                 Container(
                   child: GoogleMap(
                     key: _key,
-                    initialPosition: GeoCoord(10.9531641, 106.8017787),
-                    initialZoom: 16,
-                    mapType: MapType.terrain,
+                    initialPosition: GeoCoord(13.2017752, 108.7849571),
+                    mobilePreferences: const MobileMapPreferences(
+                      myLocationEnabled: true,
+                      trafficEnabled: true,
+                      zoomControlsEnabled: false,
+                    ),
+                    webPreferences: WebMapPreferences(
+                      fullscreenControl: true,
+                      zoomControl: true,
+                    ),
+                    initialZoom: 10,
+                    mapType: MapType.roadmap,
                     markers: markers,
                   ),
                 ),

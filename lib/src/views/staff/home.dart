@@ -1,19 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_my_train/src/controller/staff/staff.dart';
+import 'package:flutter_my_train/src/model/staff.dart';
 import 'package:flutter_my_train/src/utils/colors.dart';
+import 'package:flutter_my_train/src/utils/push.dart';
 import 'package:flutter_my_train/src/views/staff/location.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StaffHome extends StatefulWidget {
-  const StaffHome({Key key}) : super(key: key);
+  final int khachHang;
+  final int hangHoa;
+  final int thanhToanTruoc;
+  const StaffHome({Key key, this.khachHang, this.hangHoa, this.thanhToanTruoc})
+      : super(key: key);
 
   @override
   _StaffHomeState createState() => _StaffHomeState();
 }
 
 class _StaffHomeState extends State<StaffHome> {
+  // muon in ra thi ban phai truy cap vao tung phan tu =>  widget cha
+  StaffController staffController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    staffController = StaffController(context: context);
+  }
+
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -142,11 +158,13 @@ class _StaffHomeState extends State<StaffHome> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => StaffLocation(),
-                                  ));
+                              staffController.get().then((value) {
+                                if (value != null) {
+                                  staffController.model.changeList(value);
+                                  Push.nextStaff(
+                                      context: context, page: StaffLocation());
+                                }
+                              });
                             },
                             child: Container(
                               height: 55,
