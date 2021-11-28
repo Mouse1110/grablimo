@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_google_maps/flutter_google_maps.dart';
 import 'package:flutter_my_train/src/controller/booking/booking.dart';
+import 'package:flutter_my_train/src/model/client.dart';
 import 'package:flutter_my_train/src/model/otd/book.dart';
 import 'package:flutter_my_train/src/utils/push.dart';
 import 'package:flutter_my_train/src/views/book/position.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:provider/provider.dart';
 
 class BookLocation extends StatefulWidget {
   const BookLocation({Key key, this.diemDen, this.diemDi}) : super(key: key);
@@ -633,6 +635,7 @@ class _BookLocationState extends State<BookLocation> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
     _diemDen.text = widget.diemDen;
     _diemDi.text = widget.diemDi;
     _controller = BookingController(context: context);

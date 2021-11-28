@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_my_train/src/utils/push.dart';
+import 'package:flutter_my_train/src/views/home/home.dart';
 
 class BookCheck extends StatelessWidget {
   const BookCheck({Key key}) : super(key: key);
@@ -22,5 +26,10 @@ class BookCheck extends StatelessWidget {
       );
 
   @override
-  Widget build(BuildContext context) => scaffold();
+  Widget build(BuildContext context) {
+    Timer(const Duration(seconds: 2), () {
+      Push.nextClientSave(context: context, page: Home());
+    });
+    return scaffold();
+  }
 }

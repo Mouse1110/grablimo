@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_my_train/src/controller/login/login.dart';
+import 'package:flutter_my_train/src/model/otd/user.dart';
+import 'package:flutter_my_train/src/utils/push.dart';
+import 'package:flutter_my_train/src/views/home/home.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignUp extends StatelessWidget {
+class SignUp extends StatefulWidget {
   const SignUp({Key key}) : super(key: key);
 
-  Widget input({String title, String hint}) => Column(
+  @override
+  State<SignUp> createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUp> {
+  TextEditingController _name = TextEditingController();
+  TextEditingController _phone = TextEditingController();
+  TextEditingController _pass = TextEditingController();
+  LoginController _controller;
+  Widget input({String title, String hint, TextEditingController controller}) =>
+      Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
@@ -13,6 +27,7 @@ class SignUp extends StatelessWidget {
                 GoogleFonts.nunito(fontSize: 18, fontWeight: FontWeight.w700),
           ),
           TextField(
+            controller: controller,
             decoration: InputDecoration(
                 hintText: hint,
                 hintStyle: GoogleFonts.nunito(
@@ -21,7 +36,7 @@ class SignUp extends StatelessWidget {
         ],
       );
 
-  Widget scaffold({Size size}) => SafeArea(
+  Widget scaffold({Size size, BuildContext context}) => SafeArea(
         child: Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
@@ -81,44 +96,62 @@ class SignUp extends StatelessWidget {
                             const SizedBox(
                               height: 50,
                             ),
-                            input(title: 'Tên của bạn', hint: 'Nhập họ và tên'),
+                            input(
+                              title: 'Tên của bạn',
+                              hint: 'Nhập họ và tên',
+                              controller: _name,
+                            ),
                             const SizedBox(
                               height: 20,
                             ),
                             input(
-                                title: 'Số điện thoại',
-                                hint: 'Nhập số điện thoại'),
+                              title: 'Số điện thoại',
+                              hint: 'Nhập số điện thoại',
+                              controller: _phone,
+                            ),
                             const SizedBox(
                               height: 20,
                             ),
                             input(
-                                title: 'Mật khẩu',
-                                hint: 'Nhập mật khẩu của bạn'),
-                            const SizedBox(
-                              height: 20,
+                              title: 'Mật khẩu',
+                              hint: 'Nhập mật khẩu của bạn',
+                              controller: _pass,
                             ),
-                            input(
-                                title: 'Nhập lại mật khẩu',
-                                hint: 'Nhập lại mật khẩu của bạn'),
                             const SizedBox(
                               height: 50,
                             ),
                             Align(
                               alignment: Alignment.center,
-                              child: Container(
-                                width: 200,
-                                height: 60,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                    color:
-                                        const Color.fromRGBO(255, 152, 94, 1),
-                                    borderRadius: BorderRadius.circular(24)),
-                                child: Text(
-                                  'Xác nhận',
-                                  style: GoogleFonts.nunito(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
+                              child: GestureDetector(
+                                onTap: () {
+                                  UserOTD user = UserOTD(
+                                    name: _name.text,
+                                    phone: _phone.text,
+                                    pass: _pass.text,
+                                  );
+                                  _controller.signup(user: user).then((value) {
+                                    if (value != null) {
+                                      _controller.model.changeUser(value);
+                                      Push.nextClientSave(
+                                          context: context, page: Home());
+                                    }
+                                  });
+                                },
+                                child: Container(
+                                  width: 200,
+                                  height: 60,
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                      color:
+                                          const Color.fromRGBO(255, 152, 94, 1),
+                                      borderRadius: BorderRadius.circular(24)),
+                                  child: Text(
+                                    'Xác nhận',
+                                    style: GoogleFonts.nunito(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  ),
                                 ),
                               ),
                             ),
@@ -142,10 +175,25 @@ class SignUp extends StatelessWidget {
           ),
         ),
       );
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller = LoginController(context: context);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _name.dispose();
+    _phone.dispose();
+    _pass.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return scaffold(size: size);
+    return scaffold(size: size, context: context);
   }
 }

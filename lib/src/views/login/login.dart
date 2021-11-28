@@ -3,6 +3,7 @@ import 'package:flutter_my_train/src/controller/login/login.dart';
 import 'package:flutter_my_train/src/model/client.dart';
 import 'package:flutter_my_train/src/utils/push.dart';
 import 'package:flutter_my_train/src/views/home/home.dart';
+import 'package:flutter_my_train/src/views/login/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Login extends StatefulWidget {
@@ -42,7 +43,7 @@ class _LoginState extends State<Login> {
         ],
       );
 
-  Widget scaffold({Size size}) => SafeArea(
+  Widget scaffold({Size size, BuildContext context}) => SafeArea(
         child: Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
@@ -122,12 +123,14 @@ class _LoginState extends State<Login> {
                                         onTap: () {
                                           _controller
                                               .login(
-                                            name: _nameInput.text,
+                                            phone: _nameInput.text,
                                             pass: _passInput.text,
                                           )
                                               .then((value) {
-                                            if (value) {
-                                              Push.nextClient(
+                                            if (value != null) {
+                                              _controller.model
+                                                  .changeUser(value);
+                                              Push.nextClientSave(
                                                   context: context,
                                                   page: Home());
                                             }
@@ -169,12 +172,19 @@ class _LoginState extends State<Login> {
                                           const SizedBox(
                                             width: 8,
                                           ),
-                                          Text(
-                                            'Đăng ký',
-                                            style: GoogleFonts.nunito(
-                                                fontSize: 16,
-                                                color: Colors.blue,
-                                                fontWeight: FontWeight.w700),
+                                          GestureDetector(
+                                            onTap: () {
+                                              Push.nextClientSave(
+                                                  context: context,
+                                                  page: SignUp());
+                                            },
+                                            child: Text(
+                                              'Đăng ký',
+                                              style: GoogleFonts.nunito(
+                                                  fontSize: 16,
+                                                  color: Colors.blue,
+                                                  fontWeight: FontWeight.w700),
+                                            ),
                                           )
                                         ],
                                       )
@@ -219,6 +229,6 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return scaffold(size: size);
+    return scaffold(size: size, context: context);
   }
 }

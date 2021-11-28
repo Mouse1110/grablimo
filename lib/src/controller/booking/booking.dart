@@ -20,14 +20,29 @@ class BookingController {
 
   Future<bool> post({@required BookOTD book}) async {
     var url = Uri.parse('${link}book');
-    var response = await http.post(url, body: book.toJson());
+    var response = await http.post(url,
+        body: {'book': jsonEncode(book.toJson()), 'user': model.user.id});
     print('Response status: ${response.statusCode}');
     print('Response body: ${response.body}');
     if (response.statusCode != 200) {
       return false;
     }
-    dynamic data = BookOTD.fromJson(jsonDecode(response.body));
-    print('$data');
     return true;
+  }
+
+  Future<BookOTD> getBook({@required String phone}) async {
+    var url = Uri.parse('${link}user/book' + '?p=$phone');
+    var response = await http.get(url);
+    print('Response status: ${response.statusCode}');
+    print('Response body: ${response.body}');
+    if (response.statusCode != 200) {
+      return null;
+    }
+    if (jsonDecode(response.body)['err'] != 0) {
+      return null;
+    }
+    BookOTD book = BookOTD.fromJson(jsonDecode(response.body)['data']);
+    print(book.date);
+    return book;
   }
 }

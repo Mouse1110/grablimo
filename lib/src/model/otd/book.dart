@@ -7,6 +7,8 @@ class BookOTD {
   String time;
   String kind;
   List<dynamic> char;
+  String name;
+  String phone;
 
   BookOTD(
       {this.char, this.date, this.diemDen, this.diemDi, this.kind, this.time});
@@ -17,6 +19,8 @@ class BookOTD {
         date = json['date'],
         time = json['time'],
         kind = json['kind'],
+        name = json['name'],
+        phone = json['phone'],
         char = json['char'];
 
   Map<String, dynamic> toJson() => {
