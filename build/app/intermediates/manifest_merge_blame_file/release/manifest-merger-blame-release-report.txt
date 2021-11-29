@@ -1,11 +1,11 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.flutter_my_train"
+3    package="com.mouse.flutter_my_train"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="20"
+8        android:minSdkVersion="24"
 8-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="30" />
 9-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
@@ -29,114 +29,128 @@
 19    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 19-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:9:5-78
 19-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:9:22-76
-20
-21    <uses-feature
-21-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
-22        android:glEsVersion="0x00020000"
-22-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
-23        android:required="true" />
-23-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
-24
-25    <application
-25-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:10:4-51:19
-26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-26-->[androidx.core:core:1.6.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5f663b08eec19eef9a9d1af662d9025e\core-1.6.0\AndroidManifest.xml:24:18-86
-27        android:icon="@mipmap/ic_launcher"
-27-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:12:9-43
-28        android:label="flutter_my_train" >
-28-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:11:9-41
-29        <activity
-29-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:14:9-43:20
-30            android:name="com.example.flutter_my_train.MainActivity"
-30-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:15:13-41
-31            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-31-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:18:13-163
-32            android:hardwareAccelerated="true"
-32-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:19:13-47
-33            android:launchMode="singleTop"
-33-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:16:13-43
-34            android:theme="@style/LaunchTheme"
-34-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:17:13-47
-35            android:windowSoftInputMode="adjustResize" >
-35-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:20:13-55
-36
-37            <!--
-38                 Specifies an Android theme to apply to this Activity as soon as
-39                 the Android process has started. This theme is visible to the user
-40                 while the Flutter UI initializes. After that, this theme continues
-41                 to determine the Window background behind the Flutter UI.
-42            -->
-43            <meta-data
-43-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:25:13-28:17
-44                android:name="io.flutter.embedding.android.NormalTheme"
-44-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:26:15-70
-45                android:resource="@style/NormalTheme" />
-45-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:27:15-52
-46
-47            <!--
-48                 Displays an Android View that continues showing the launch screen
-49                 Drawable until Flutter paints its first frame, then this splash
-50                 screen fades out. A splash screen is useful to avoid any visual
-51                 gap between the end of Android's launch screen and the painting of
-52                 Flutter's first frame.
-53            -->
-54            <meta-data
-54-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:35:13-38:17
-55                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-55-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:36:15-79
-56                android:resource="@drawable/launch_background" />
-56-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:37:15-61
-57
-58            <intent-filter>
-58-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:39:13-42:29
-59                <action android:name="android.intent.action.MAIN" />
-59-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:40:17-68
-59-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:40:25-66
+20    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+20-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:10:5-84
+20-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:10:22-82
+21
+22    <uses-feature
+22-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+23        android:glEsVersion="0x00020000"
+23-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+24        android:required="true" />
+24-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+25
+26    <application
+26-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:11:4-53:19
+27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+27-->[androidx.core:core:1.6.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5f663b08eec19eef9a9d1af662d9025e\core-1.6.0\AndroidManifest.xml:24:18-86
+28        android:extractNativeLibs="false"
+29        android:icon="@mipmap/ticket_logo"
+29-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:14:9-43
+30        android:label="GrabLimo"
+30-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:12:9-33
+31        android:usesCleartextTraffic="true" >
+31-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:13:9-44
+32        <activity
+32-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:16:9-45:20
+33            android:name="com.mouse.flutter_my_train.MainActivity"
+33-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:17:13-41
+34            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+34-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:20:13-163
+35            android:hardwareAccelerated="true"
+35-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:21:13-47
+36            android:launchMode="singleTop"
+36-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:18:13-43
+37            android:theme="@style/LaunchTheme"
+37-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:19:13-47
+38            android:windowSoftInputMode="adjustResize" >
+38-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:22:13-55
+39
+40            <!--
+41                 Specifies an Android theme to apply to this Activity as soon as
+42                 the Android process has started. This theme is visible to the user
+43                 while the Flutter UI initializes. After that, this theme continues
+44                 to determine the Window background behind the Flutter UI.
+45            -->
+46            <meta-data
+46-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:27:13-30:17
+47                android:name="io.flutter.embedding.android.NormalTheme"
+47-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:28:15-70
+48                android:resource="@style/NormalTheme" />
+48-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:29:15-52
+49
+50            <!--
+51                 Displays an Android View that continues showing the launch screen
+52                 Drawable until Flutter paints its first frame, then this splash
+53                 screen fades out. A splash screen is useful to avoid any visual
+54                 gap between the end of Android's launch screen and the painting of
+55                 Flutter's first frame.
+56            -->
+57            <meta-data
+57-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:37:13-40:17
+58                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+58-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:38:15-79
+59                android:resource="@drawable/launch_background" />
+59-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:39:15-61
 60
-61                <category android:name="android.intent.category.LAUNCHER" />
-61-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:41:17-76
-61-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:41:27-74
-62            </intent-filter>
-63        </activity>
-64        <!--
-65             Don't delete the meta-data below.
-66             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-67        -->
-68        <meta-data
-68-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:46:9-48:33
-69            android:name="flutterEmbedding"
-69-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:47:13-44
-70            android:value="2" />
-70-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:48:13-30
+61            <intent-filter>
+61-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:41:13-44:29
+62                <action android:name="android.intent.action.MAIN" />
+62-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:42:17-68
+62-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:42:25-66
+63
+64                <category android:name="android.intent.category.LAUNCHER" />
+64-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:43:17-76
+64-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:43:27-74
+65            </intent-filter>
+66        </activity>
+67        <!--
+68             Don't delete the meta-data below.
+69             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+70        -->
 71        <meta-data
-71-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:49:9-50:73
-72            android:name="com.google.android.geo.API_KEY"
-72-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:49:20-65
-73            android:value="AIzaSyB95RXOzdsh9JtGrD9YCzb-oTga_7eYmw4" />
-73-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:50:16-71
-74        <!-- Needs to be explicitly declared on P+ -->
-75        <uses-library
-75-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
-76            android:name="org.apache.http.legacy"
-76-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
-77            android:required="false" />
-77-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
-78
-79        <activity
-79-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\7c879cb157fab2c9a5d74c3d70fd64e3\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-80            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-80-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\7c879cb157fab2c9a5d74c3d70fd64e3\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-81            android:exported="false"
-81-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\7c879cb157fab2c9a5d74c3d70fd64e3\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-82            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-82-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\7c879cb157fab2c9a5d74c3d70fd64e3\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-83
-84        <meta-data
-84-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\3c8e7eb3d21ac94d08f658f6d8a1c9f3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-85            android:name="com.google.android.gms.version"
-85-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\3c8e7eb3d21ac94d08f658f6d8a1c9f3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-86            android:value="@integer/google_play_services_version" />
-86-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\3c8e7eb3d21ac94d08f658f6d8a1c9f3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-87    </application>
-88
-89</manifest>
+71-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:48:9-50:33
+72            android:name="flutterEmbedding"
+72-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:49:13-44
+73            android:value="2" />
+73-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:50:13-30
+74        <meta-data
+74-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:51:9-52:73
+75            android:name="com.google.android.geo.API_KEY"
+75-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:51:20-65
+76            android:value="AIzaSyB95RXOzdsh9JtGrD9YCzb-oTga_7eYmw4" />
+76-->E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:52:16-71
+77
+78        <activity
+78-->[:url_launcher] E:\Git\grablimo\build\url_launcher\intermediates\library_manifest\release\AndroidManifest.xml:8:9-11:74
+79            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+79-->[:url_launcher] E:\Git\grablimo\build\url_launcher\intermediates\library_manifest\release\AndroidManifest.xml:9:13-74
+80            android:exported="false"
+80-->[:url_launcher] E:\Git\grablimo\build\url_launcher\intermediates\library_manifest\release\AndroidManifest.xml:10:13-37
+81            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- Needs to be explicitly declared on P+ -->
+81-->[:url_launcher] E:\Git\grablimo\build\url_launcher\intermediates\library_manifest\release\AndroidManifest.xml:11:13-71
+82        <uses-library
+82-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+83            android:name="org.apache.http.legacy"
+83-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+84            android:required="false" />
+84-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+85
+86        <activity
+86-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\7c879cb157fab2c9a5d74c3d70fd64e3\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+87            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+87-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\7c879cb157fab2c9a5d74c3d70fd64e3\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+88            android:exported="false"
+88-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\7c879cb157fab2c9a5d74c3d70fd64e3\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+89            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+89-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\7c879cb157fab2c9a5d74c3d70fd64e3\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+90
+91        <meta-data
+91-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\3c8e7eb3d21ac94d08f658f6d8a1c9f3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+92            android:name="com.google.android.gms.version"
+92-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\3c8e7eb3d21ac94d08f658f6d8a1c9f3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+93            android:value="@integer/google_play_services_version" />
+93-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\3c8e7eb3d21ac94d08f658f6d8a1c9f3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+94    </application>
+95
+96</manifest>

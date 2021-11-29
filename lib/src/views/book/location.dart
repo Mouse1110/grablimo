@@ -6,6 +6,8 @@ import 'package:flutter_my_train/src/model/client.dart';
 import 'package:flutter_my_train/src/model/otd/book.dart';
 import 'package:flutter_my_train/src/utils/push.dart';
 import 'package:flutter_my_train/src/views/book/position.dart';
+import 'package:flutter_my_train/src/views/home/home.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +16,7 @@ class BookLocation extends StatefulWidget {
   const BookLocation({Key key, this.diemDen, this.diemDi}) : super(key: key);
   final String diemDi;
   final String diemDen;
+
   @override
   State<BookLocation> createState() => _BookLocationState();
 }
@@ -461,21 +464,26 @@ class _BookLocationState extends State<BookLocation> {
           appBar: AppBar(
             elevation: 0,
             backgroundColor: const Color.fromRGBO(255, 152, 94, 1),
-            leading: Container(
-              margin: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.white,
-                ),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Center(
-                child: Text(
-                  '<',
-                  style: GoogleFonts.nunito(
+            leading: GestureDetector(
+              onTap: () {
+                Push.nextClientSave(context: context, page: Home());
+              },
+              child: Container(
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  border: Border.all(
                     color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Center(
+                  child: Text(
+                    '<',
+                    style: GoogleFonts.nunito(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -591,34 +599,47 @@ class _BookLocationState extends State<BookLocation> {
                             left: 0,
                             right: 0,
                             child: _init > 1
-                                ? Container(
-                                    child: GoogleMap(
-                                      key: _key,
-                                      initialPosition:
-                                          GeoCoord(10.9531641, 106.8017787),
-                                      initialZoom: 16,
-                                      mapType: MapType.terrain,
-                                      onTap: (GeoCoord pos) {
-                                        if (_init == 2) {
-                                          _diemDi.text =
-                                              '${pos.latitude},${pos.longitude}';
-                                          diemDi.add('${pos.latitude}');
-                                          diemDi.add('${pos.longitude}');
-                                        } else {
-                                          _diemDen.text =
-                                              '${pos.latitude},${pos.longitude}';
-                                          diemDen.add('${pos.latitude}');
-                                          diemDen.add('${pos.longitude}');
-                                        }
-                                        GoogleMap.of(_key).clearMarkers();
-                                        GoogleMap.of(_key).addMarkerRaw(pos,
-                                            label: 'Điểm đi');
-                                        _init = 0;
-                                        setState(() {});
-                                      },
-                                      markers: Set<Marker>.of(_markers),
-                                    ),
-                                  )
+                                ? Container(child: Consumer<ClientModel>(
+                                    builder: (context, value, child) {
+                                      return GoogleMap(
+                                        key: _key,
+                                        initialPosition: GeoCoord(
+                                            value.position.latitude,
+                                            value.position.longitude),
+                                        mobilePreferences:
+                                            const MobileMapPreferences(
+                                          myLocationEnabled: true,
+                                          trafficEnabled: true,
+                                          zoomControlsEnabled: false,
+                                        ),
+                                        webPreferences: WebMapPreferences(
+                                          fullscreenControl: true,
+                                          zoomControl: true,
+                                        ),
+                                        initialZoom: 16,
+                                        mapType: MapType.terrain,
+                                        onTap: (GeoCoord pos) {
+                                          if (_init == 2) {
+                                            _diemDi.text =
+                                                '${pos.latitude},${pos.longitude}';
+                                            diemDi.add('${pos.latitude}');
+                                            diemDi.add('${pos.longitude}');
+                                          } else {
+                                            _diemDen.text =
+                                                '${pos.latitude},${pos.longitude}';
+                                            diemDen.add('${pos.latitude}');
+                                            diemDen.add('${pos.longitude}');
+                                          }
+                                          GoogleMap.of(_key).clearMarkers();
+                                          GoogleMap.of(_key).addMarkerRaw(pos,
+                                              label: 'Điểm đi');
+                                          _init = 0;
+                                          setState(() {});
+                                        },
+                                        markers: Set<Marker>.of(_markers),
+                                      );
+                                    },
+                                  ))
                                 : const SizedBox(),
                           ),
                         ],

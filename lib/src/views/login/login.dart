@@ -4,6 +4,7 @@ import 'package:flutter_my_train/src/model/client.dart';
 import 'package:flutter_my_train/src/utils/push.dart';
 import 'package:flutter_my_train/src/views/home/home.dart';
 import 'package:flutter_my_train/src/views/login/signup.dart';
+import 'package:flutter_my_train/src/views/staff/home.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Login extends StatefulWidget {
@@ -112,7 +113,7 @@ class _LoginState extends State<Login> {
                                             color:
                                                 Colors.black.withOpacity(0.7)),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                                 Align(
@@ -128,11 +129,18 @@ class _LoginState extends State<Login> {
                                           )
                                               .then((value) {
                                             if (value != null) {
-                                              _controller.model
-                                                  .changeUser(value);
-                                              Push.nextClientSave(
-                                                  context: context,
-                                                  page: Home());
+                                              print(value);
+                                              if (value == true) {
+                                                Push.nextStaff(
+                                                    context: context,
+                                                    page: StaffHome());
+                                              } else {
+                                                _controller.model
+                                                    .changeUser(value);
+                                                Push.nextClientSave(
+                                                    context: context,
+                                                    page: Home());
+                                              }
                                             }
                                           });
                                         },

@@ -3,6 +3,7 @@ import 'package:flutter_my_train/src/controller/booking/booking.dart';
 import 'package:flutter_my_train/src/model/otd/book.dart';
 import 'package:flutter_my_train/src/utils/push.dart';
 import 'package:flutter_my_train/src/views/book/bill.dart';
+import 'package:flutter_my_train/src/views/book/location.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BookPosition extends StatefulWidget {
@@ -33,7 +34,7 @@ class _BookPositionState extends State<BookPosition> {
         ],
       );
 
-  Widget logPos({Size size}) => Container(
+  Widget logPos({Size size, BuildContext context}) => Container(
         height: size.height * 0.25,
         color: const Color.fromRGBO(255, 152, 94, 1),
         child: Stack(
@@ -46,21 +47,27 @@ class _BookPositionState extends State<BookPosition> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    width: 32,
-                    height: 32,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(4),
-                        border: Border.all(
-                          width: 1,
-                          color: const Color.fromRGBO(255, 152, 94, 1),
-                        )),
-                    child: Text(
-                      '<',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  GestureDetector(
+                    onTap: () {
+                      Push.nextClientSave(
+                          context: context, page: BookLocation());
+                    },
+                    child: Container(
+                      width: 32,
+                      height: 32,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(4),
+                          border: Border.all(
+                            width: 1,
+                            color: const Color.fromRGBO(255, 152, 94, 1),
+                          )),
+                      child: Text(
+                        '<',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                   Text(
@@ -160,13 +167,13 @@ class _BookPositionState extends State<BookPosition> {
     );
   }
 
-  Widget scaffold({Size size}) => SafeArea(
+  Widget scaffold({Size size, BuildContext context}) => SafeArea(
           child: Scaffold(
         body: Container(
           color: const Color.fromRGBO(255, 152, 94, 1),
           child: Column(
             children: [
-              logPos(size: size),
+              logPos(size: size, context: context),
               const SizedBox(
                 height: 10,
               ),
@@ -369,6 +376,6 @@ class _BookPositionState extends State<BookPosition> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return scaffold(size: size);
+    return scaffold(size: size, context: context);
   }
 }

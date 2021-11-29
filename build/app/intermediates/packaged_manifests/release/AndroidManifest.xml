@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_my_train"
+    package="com.mouse.flutter_my_train"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
     <uses-sdk
-        android:minSdkVersion="20"
+        android:minSdkVersion="24"
         android:targetSdkVersion="30" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -17,6 +17,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -24,10 +25,12 @@
 
     <application
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-        android:icon="@mipmap/ic_launcher"
-        android:label="flutter_my_train" >
+        android:extractNativeLibs="false"
+        android:icon="@mipmap/ticket_logo"
+        android:label="GrabLimo"
+        android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.example.flutter_my_train.MainActivity"
+            android:name="com.mouse.flutter_my_train.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
@@ -71,7 +74,11 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB95RXOzdsh9JtGrD9YCzb-oTga_7eYmw4" />
-        <!-- Needs to be explicitly declared on P+ -->
+
+        <activity
+            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- Needs to be explicitly declared on P+ -->
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />

@@ -14,13 +14,17 @@ class LoginController {
     model = Provider.of<ClientModel>(context, listen: false);
   }
 
-  Future<UserOTD> login({@required String phone, @required String pass}) async {
+  Future<dynamic> login({@required String phone, @required String pass}) async {
     var url = Uri.parse('${link}login');
     var response = await http.post(url, body: {'phone': phone, 'pass': pass});
     print('Response status: ${response.statusCode}');
     print('Response body: ${response.body}');
     if (response.statusCode != 200) {
       return null;
+    }
+
+    if (jsonDecode(response.body)['err'] == 3) {
+      return true;
     }
     if (jsonDecode(response.body)['err'] != 0) {
       return null;

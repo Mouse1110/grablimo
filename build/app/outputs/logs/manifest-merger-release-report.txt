@@ -1,45 +1,69 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-52:12
-INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-52:12
-INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-52:12
-INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-52:12
+ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-54:12
+INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-54:12
+INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-54:12
+INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-54:12
 MERGED from [:google_maps_flutter] E:\Git\grablimo\build\google_maps_flutter\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_plugin_android_lifecycle] E:\Git\grablimo\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher] E:\Git\grablimo\build\url_launcher\intermediates\library_manifest\release\AndroidManifest.xml:2:1-14:12
 MERGED from [:path_provider] E:\Git\grablimo\build\path_provider\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:permission_handler] E:\Git\grablimo\build\permission_handler\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:geolocator] E:\Git\grablimo\build\geolocator\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\1922d231926cb473737903cddcf123b3\material-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5948e9b6947236ccb3f5762413952c41\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\e3b955ecda086b4c1718adb183ce5ddb\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\310ab9a0527a6eae82cf4754a9a75b7a\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\e0933a81fc48b17fda6a0b345e31cc66\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5cc10fa79d98a6363adab29f7c5f3eea\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\93b67ce77e3018bae7dcfb3d9df971c2\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\a59d1de1f299e68c5b049a432ccfd655\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\42415d22b488b741b7e8fbc712464c00\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\249572a22213d81f5256cf3e1140cb73\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\9fc3a8817b594227896ccf95d4d39e51\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:17:1-38:12
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\340206bb4856bf61e48bd10632b21882\jetified-play-services-location-17.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\7c879cb157fab2c9a5d74c3d70fd64e3\jetified-play-services-base-17.0.0\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\792892a7083917130fbc18623188f241\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\953f01bd1c1ba965762327dfde85b8cc\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\3c8e7eb3d21ac94d08f658f6d8a1c9f3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\2fd9120a6da4df3dbabdd40f6a2d8995\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5df89e8088c70e401fb8cfb2812809a3\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\eb26273f8f7192460456ce62b9bdf9ef\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\a71638e40cbd9c9c6e5d2d7449ca53dd\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\bc28a09d8d2212ffd5788fe6c1853326\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\fead7ea2e43546ae73f7f9d07ac64f5f\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\d9536c14ffde0b7289f12ba6def6bfa4\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\68dbf8ea01a1dbd974fc87b5753550f0\jetified-activity-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\bc28a09d8d2212ffd5788fe6c1853326\customview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.6.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5f663b08eec19eef9a9d1af662d9025e\core-1.6.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\ca6b214160bd0909b103aa12202ef51c\lifecycle-runtime-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\2271d874344878e62b9a8e309af0c39d\jetified-savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\fb333fb43575d8a3b51161295454427f\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\cad25976877a6ae855ef6821534f58a1\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\1fdddb698f5b73fbeb212822ee0a08f1\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c39070be4a8b092ae5970162a829e305\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\15ddec56bd001fb2d4fc04a7d71346e8\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\b6c34301107cd06a29fdce8c3ef58e3a\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\f15d67ff15ac844b69200ea1a0376a7a\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\15792e6083b2b5b5a7ffa285d47daa24\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\b962778313a0e23f9ca3dbafc012c1af\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\a861f0b05a17132e2f96ff286e3c4f23\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-52:12
-INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-52:12
-INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-52:12
+INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-54:12
+INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-54:12
+INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-54:12
 	package
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:2:5-43
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:2:5-41
 		INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
 		INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-52:12
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-54:12
 		INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-52:12
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:1-54:12
 		INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:1:11-69
@@ -67,12 +91,26 @@ uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:9:5-78
 	android:name
 		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:9:22-76
+uses-permission#android.permission.ACCESS_BACKGROUND_LOCATION
+ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:10:5-84
+	android:name
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:10:22-82
 application
-ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:10:4-51:19
+ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:11:4-53:19
+MERGED from [:url_launcher] E:\Git\grablimo\build\url_launcher\intermediates\library_manifest\release\AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] E:\Git\grablimo\build\url_launcher\intermediates\library_manifest\release\AndroidManifest.xml:7:5-12:19
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\1922d231926cb473737903cddcf123b3\material-1.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\1922d231926cb473737903cddcf123b3\material-1.4.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\e0933a81fc48b17fda6a0b345e31cc66\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\e0933a81fc48b17fda6a0b345e31cc66\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:30:5-36:19
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\340206bb4856bf61e48bd10632b21882\jetified-play-services-location-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\340206bb4856bf61e48bd10632b21882\jetified-play-services-location-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\7c879cb157fab2c9a5d74c3d70fd64e3\jetified-play-services-base-17.0.0\AndroidManifest.xml:22:5-27:19
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\7c879cb157fab2c9a5d74c3d70fd64e3\jetified-play-services-base-17.0.0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\792892a7083917130fbc18623188f241\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\792892a7083917130fbc18623188f241\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\953f01bd1c1ba965762327dfde85b8cc\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\953f01bd1c1ba965762327dfde85b8cc\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\3c8e7eb3d21ac94d08f658f6d8a1c9f3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
@@ -84,57 +122,59 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\lu
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5f663b08eec19eef9a9d1af662d9025e\core-1.6.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:11:9-41
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:12:9-33
 	android:icon
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:12:9-43
-activity#com.example.flutter_my_train.MainActivity
-ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:14:9-43:20
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:14:9-43
+	android:usesCleartextTraffic
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:13:9-44
+activity#com.mouse.flutter_my_train.MainActivity
+ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:16:9-45:20
 	android:launchMode
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:16:13-43
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:18:13-43
 	android:hardwareAccelerated
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:19:13-47
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:21:13-47
 	android:windowSoftInputMode
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:20:13-55
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:22:13-55
 	android:configChanges
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:18:13-163
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:20:13-163
 	android:theme
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:17:13-47
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:19:13-47
 	android:name
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:15:13-41
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:17:13-41
 meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:25:13-28:17
+ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:27:13-30:17
 	android:resource
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:27:15-52
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:29:15-52
 	android:name
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:26:15-70
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:28:15-70
 meta-data#io.flutter.embedding.android.SplashScreenDrawable
-ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:35:13-38:17
+ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:37:13-40:17
 	android:resource
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:37:15-61
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:39:15-61
 	android:name
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:36:15-79
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:38:15-79
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:39:13-42:29
+ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:41:13-44:29
 action#android.intent.action.MAIN
-ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:40:17-68
+ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:42:17-68
 	android:name
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:40:25-66
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:42:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:41:17-76
+ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:43:17-76
 	android:name
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:41:27-74
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:43:27-74
 meta-data#flutterEmbedding
-ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:46:9-48:33
+ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:48:9-50:33
 	android:value
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:48:13-30
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:50:13-30
 	android:name
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:47:13-44
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:49:13-44
 meta-data#com.google.android.geo.API_KEY
-ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:49:9-50:73
+ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:51:9-52:73
 	android:value
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:50:16-71
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:52:16-71
 	android:name
-		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:49:20-65
+		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml:51:20-65
 uses-sdk
 INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
@@ -143,26 +183,64 @@ MERGED from [:google_maps_flutter] E:\Git\grablimo\build\google_maps_flutter\int
 MERGED from [:google_maps_flutter] E:\Git\grablimo\build\google_maps_flutter\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] E:\Git\grablimo\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] E:\Git\grablimo\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] E:\Git\grablimo\build\url_launcher\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] E:\Git\grablimo\build\url_launcher\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] E:\Git\grablimo\build\path_provider\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] E:\Git\grablimo\build\path_provider\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler] E:\Git\grablimo\build\permission_handler\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler] E:\Git\grablimo\build\permission_handler\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:geolocator] E:\Git\grablimo\build\geolocator\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:geolocator] E:\Git\grablimo\build\geolocator\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\1922d231926cb473737903cddcf123b3\material-1.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\1922d231926cb473737903cddcf123b3\material-1.4.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5948e9b6947236ccb3f5762413952c41\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5948e9b6947236ccb3f5762413952c41\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\e3b955ecda086b4c1718adb183ce5ddb\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\e3b955ecda086b4c1718adb183ce5ddb\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\310ab9a0527a6eae82cf4754a9a75b7a\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\310ab9a0527a6eae82cf4754a9a75b7a\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\e0933a81fc48b17fda6a0b345e31cc66\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\e0933a81fc48b17fda6a0b345e31cc66\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5cc10fa79d98a6363adab29f7c5f3eea\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5cc10fa79d98a6363adab29f7c5f3eea\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\93b67ce77e3018bae7dcfb3d9df971c2\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\93b67ce77e3018bae7dcfb3d9df971c2\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\a59d1de1f299e68c5b049a432ccfd655\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\a59d1de1f299e68c5b049a432ccfd655\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\42415d22b488b741b7e8fbc712464c00\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\42415d22b488b741b7e8fbc712464c00\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\249572a22213d81f5256cf3e1140cb73\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\249572a22213d81f5256cf3e1140cb73\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\9fc3a8817b594227896ccf95d4d39e51\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\9fc3a8817b594227896ccf95d4d39e51\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\340206bb4856bf61e48bd10632b21882\jetified-play-services-location-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\340206bb4856bf61e48bd10632b21882\jetified-play-services-location-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\7c879cb157fab2c9a5d74c3d70fd64e3\jetified-play-services-base-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\7c879cb157fab2c9a5d74c3d70fd64e3\jetified-play-services-base-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\792892a7083917130fbc18623188f241\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\792892a7083917130fbc18623188f241\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\953f01bd1c1ba965762327dfde85b8cc\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\953f01bd1c1ba965762327dfde85b8cc\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\3c8e7eb3d21ac94d08f658f6d8a1c9f3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\3c8e7eb3d21ac94d08f658f6d8a1c9f3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\2fd9120a6da4df3dbabdd40f6a2d8995\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\2fd9120a6da4df3dbabdd40f6a2d8995\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5df89e8088c70e401fb8cfb2812809a3\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5df89e8088c70e401fb8cfb2812809a3\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\eb26273f8f7192460456ce62b9bdf9ef\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\eb26273f8f7192460456ce62b9bdf9ef\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\a71638e40cbd9c9c6e5d2d7449ca53dd\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\a71638e40cbd9c9c6e5d2d7449ca53dd\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\bc28a09d8d2212ffd5788fe6c1853326\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\bc28a09d8d2212ffd5788fe6c1853326\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\fead7ea2e43546ae73f7f9d07ac64f5f\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\fead7ea2e43546ae73f7f9d07ac64f5f\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\d9536c14ffde0b7289f12ba6def6bfa4\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\d9536c14ffde0b7289f12ba6def6bfa4\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\68dbf8ea01a1dbd974fc87b5753550f0\jetified-activity-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\68dbf8ea01a1dbd974fc87b5753550f0\jetified-activity-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\bc28a09d8d2212ffd5788fe6c1853326\customview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\bc28a09d8d2212ffd5788fe6c1853326\customview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.6.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5f663b08eec19eef9a9d1af662d9025e\core-1.6.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.6.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5f663b08eec19eef9a9d1af662d9025e\core-1.6.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\ca6b214160bd0909b103aa12202ef51c\lifecycle-runtime-2.2.0\AndroidManifest.xml:20:5-22:41
@@ -175,12 +253,22 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\luutr\.g
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\cad25976877a6ae855ef6821534f58a1\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\1fdddb698f5b73fbeb212822ee0a08f1\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\1fdddb698f5b73fbeb212822ee0a08f1\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c39070be4a8b092ae5970162a829e305\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c39070be4a8b092ae5970162a829e305\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\15ddec56bd001fb2d4fc04a7d71346e8\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\15ddec56bd001fb2d4fc04a7d71346e8\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\b6c34301107cd06a29fdce8c3ef58e3a\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\b6c34301107cd06a29fdce8c3ef58e3a\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\f15d67ff15ac844b69200ea1a0376a7a\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\f15d67ff15ac844b69200ea1a0376a7a\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\15792e6083b2b5b5a7ffa285d47daa24\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\15792e6083b2b5b5a7ffa285d47daa24\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\b962778313a0e23f9ca3dbafc012c1af\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\b962778313a0e23f9ca3dbafc012c1af\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\a861f0b05a17132e2f96ff286e3c4f23\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\a861f0b05a17132e2f96ff286e3c4f23\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
 INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
@@ -193,6 +281,14 @@ INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
 		INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
 		ADDED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
 		INJECTED from E:\Git\grablimo\android\app\src\main\AndroidManifest.xml
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher] E:\Git\grablimo\build\url_launcher\intermediates\library_manifest\release\AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher] E:\Git\grablimo\build\url_launcher\intermediates\library_manifest\release\AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher] E:\Git\grablimo\build\url_launcher\intermediates\library_manifest\release\AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher] E:\Git\grablimo\build\url_launcher\intermediates\library_manifest\release\AndroidManifest.xml:9:13-74
 uses-feature#0x00020000
 ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\luutr\.gradle\caches\transforms-2\files-2.1\c5de8972dacd649c27c247c9e16de3ac\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
 	android:glEsVersion

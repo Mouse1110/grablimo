@@ -4,7 +4,7 @@
     "type": "MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.example.flutter_my_train",
+  "applicationId": "com.mouse.flutter_my_train",
   "variantName": "release",
   "elements": [
     {

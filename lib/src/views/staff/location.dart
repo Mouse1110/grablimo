@@ -4,6 +4,9 @@ import 'package:flutter_my_train/src/model/otd/book.dart';
 import 'package:flutter_my_train/src/model/staff.dart';
 import 'package:flutter_my_train/src/utils/colors.dart';
 import 'package:flutter_my_train/src/utils/icons.dart';
+import 'package:flutter_my_train/src/utils/push.dart';
+import 'package:flutter_my_train/src/views/home/home.dart';
+import 'package:flutter_my_train/src/views/staff/home.dart';
 import 'package:flutter_my_train/src/views/staff/map.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -19,6 +22,14 @@ class _StaffLocationState extends State<StaffLocation> {
   List<String> phantu = ['a', 'b', 'c', 'd'];
   double _posTop;
   int _init = 0;
+  StaffController _controller;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller = StaffController(context: context);
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_init == 0) {
@@ -35,7 +46,7 @@ class _StaffLocationState extends State<StaffLocation> {
               elevation: 0,
               leading: GestureDetector(
                 onTap: () {
-                  Navigator.pop(context);
+                  Push.nextStaff(context: context, page: StaffHome());
                 },
                 child: Container(
                   margin: EdgeInsets.all(10),
@@ -56,7 +67,7 @@ class _StaffLocationState extends State<StaffLocation> {
               ),
               centerTitle: true,
               title: Text(
-                '06/11/2020',
+                '${DateTime.now().day}-${DateTime.now().month}-${DateTime.now().year}',
                 style: GoogleFonts.nunito(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
@@ -87,7 +98,7 @@ class _StaffLocationState extends State<StaffLocation> {
                         width: double.infinity,
                         margin: EdgeInsets.symmetric(horizontal: 60),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             GestureDetector(
                               onTap: () {
@@ -105,16 +116,16 @@ class _StaffLocationState extends State<StaffLocation> {
                                 ),
                               ),
                             ),
-                            Container(
-                              height: 40,
-                              alignment: Alignment.center,
-                              child: Container(
-                                child: TabButton(
-                                  title: 'Điểm trả',
-                                  selected: false,
-                                ),
-                              ),
-                            ),
+                            // Container(
+                            //   height: 40,
+                            //   alignment: Alignment.center,
+                            //   child: Container(
+                            //     child: TabButton(
+                            //       title: 'Điểm trả',
+                            //       selected: false,
+                            //     ),
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),
@@ -156,11 +167,20 @@ class _StaffLocationState extends State<StaffLocation> {
                                                 const SizedBox(
                                                   height: 10,
                                                 ),
-                                              TimeLineDot(
-                                                data: value.listBook[index],
-                                                index: index,
+                                              GestureDetector(
+                                                onTap: () {
+                                                  setState(() {
+                                                    _controller.makePhoneCall(
+                                                        'tel:${value.listBook[index].phone}');
+                                                  });
+                                                },
+                                                child: TimeLineDot(
+                                                  data: value.listBook[index],
+                                                  index: index,
+                                                ),
                                               ),
-                                              if (index == phantu.length - 1)
+                                              if (index ==
+                                                  value.listBook.length - 1)
                                                 const SizedBox(
                                                   height: 100,
                                                 ),
@@ -185,11 +205,7 @@ class _StaffLocationState extends State<StaffLocation> {
                     padding: const EdgeInsets.only(bottom: 40),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => StaffMap(),
-                            ));
+                        Push.nextStaff(context: context, page: StaffMap());
                       },
                       child: Container(
                         height: 50,
@@ -380,20 +396,18 @@ class _TimeLineDotState extends State<TimeLineDot> {
                                                 )),
                                           ],
                                         ),
-                                        Column(
-                                          children: [
-                                            SizedBox(height: 12),
-                                            Text(
-                                              'Liên hệ >>',
-                                              style: GoogleFonts.nunito(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.black
-                                                      .withOpacity(0.7)),
-                                            ),
-                                          ],
-                                        )
                                       ],
+                                    ),
+                                    Align(
+                                      alignment: Alignment.centerRight,
+                                      child: Text(
+                                        'Liên hệ >>',
+                                        style: GoogleFonts.nunito(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                            color:
+                                                Colors.black.withOpacity(0.7)),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -510,20 +524,18 @@ class _TimeLineDotState extends State<TimeLineDot> {
                                                 )),
                                           ],
                                         ),
-                                        Column(
-                                          children: [
-                                            SizedBox(height: 12),
-                                            Text(
-                                              'Liên hệ >>',
-                                              style: GoogleFonts.nunito(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.black
-                                                      .withOpacity(0.7)),
-                                            ),
-                                          ],
-                                        )
                                       ],
+                                    ),
+                                    Align(
+                                      alignment: Alignment.centerRight,
+                                      child: Text(
+                                        'Liên hệ >>',
+                                        style: GoogleFonts.nunito(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                            color:
+                                                Colors.black.withOpacity(0.7)),
+                                      ),
                                     ),
                                   ],
                                 ),

@@ -21,7 +21,7 @@ class BookOTD {
         kind = json['kind'],
         name = json['name'],
         phone = json['phone'],
-        char = json['char'];
+        char = jsonDecode(json['char'][0]);
 
   Map<String, dynamic> toJson() => {
         'diemDi': jsonEncode(diemDi),

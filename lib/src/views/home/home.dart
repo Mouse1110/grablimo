@@ -18,6 +18,7 @@ class _HomeState extends State<Home> {
   TextEditingController _diemDi = TextEditingController();
   TextEditingController _diemDen = TextEditingController();
   BookingController _bookingController;
+
   Widget location(
           {Color color,
           String title,
@@ -304,7 +305,11 @@ class _HomeState extends State<Home> {
                             child: GestureDetector(
                               onTap: () {
                                 Push.nextClientSave(
-                                    context: context, page: BookLocation());
+                                    context: context,
+                                    page: BookLocation(
+                                      diemDi: _diemDi.text,
+                                      diemDen: _diemDen.text,
+                                    ));
                               },
                               child: Container(
                                 width: 150,
@@ -413,6 +418,9 @@ class _HomeState extends State<Home> {
         _bookingController.model.changeBookIndex(value);
       }
     });
+    _bookingController
+        .getCurrent()
+        .then((value) => _bookingController.model.changePosition(value));
   }
 
   @override

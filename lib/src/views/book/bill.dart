@@ -3,6 +3,7 @@ import 'package:flutter_my_train/src/controller/booking/booking.dart';
 import 'package:flutter_my_train/src/model/client.dart';
 import 'package:flutter_my_train/src/utils/push.dart';
 import 'package:flutter_my_train/src/views/book/check.dart';
+import 'package:flutter_my_train/src/views/book/position.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +16,7 @@ class BookBill extends StatefulWidget {
 
 class _BookBillState extends State<BookBill> {
   BookingController _controller;
-  Widget scaffold() => SafeArea(
+  Widget scaffold({BuildContext context}) => SafeArea(
         child: Scaffold(
             appBar: AppBar(
               elevation: 0,
@@ -29,21 +30,26 @@ class _BookBillState extends State<BookBill> {
                 ),
               ),
               backgroundColor: const Color.fromRGBO(255, 152, 94, 1),
-              leading: Container(
-                margin: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.white,
-                  ),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Center(
-                  child: Text(
-                    '<',
-                    style: GoogleFonts.nunito(
+              leading: GestureDetector(
+                onTap: () {
+                  Push.nextClientSave(context: context, page: BookPosition());
+                },
+                child: Container(
+                  margin: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    border: Border.all(
                       color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Center(
+                    child: Text(
+                      '<',
+                      style: GoogleFonts.nunito(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
