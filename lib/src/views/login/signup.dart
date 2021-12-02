@@ -24,21 +24,20 @@ class _SignUpState extends State<SignUp> {
           Text(
             title,
             style:
-                GoogleFonts.nunito(fontSize: 18, fontWeight: FontWeight.w700),
+                GoogleFonts.nunito(fontSize: 16, fontWeight: FontWeight.w700),
           ),
           TextField(
             controller: controller,
             decoration: InputDecoration(
                 hintText: hint,
                 hintStyle: GoogleFonts.nunito(
-                    fontSize: 14, color: Colors.black.withOpacity(0.7))),
+                    fontSize: 12, color: Colors.black.withOpacity(0.7))),
           )
         ],
       );
 
   Widget scaffold({Size size, BuildContext context}) => SafeArea(
         child: Scaffold(
-          resizeToAvoidBottomInset: false,
           appBar: AppBar(
             backgroundColor: const Color.fromRGBO(255, 152, 94, 1),
             elevation: 0,
@@ -69,7 +68,7 @@ class _SignUpState extends State<SignUp> {
                             Text(
                               'Đăng Ký',
                               style: GoogleFonts.nunito(
-                                  fontSize: 28, fontWeight: FontWeight.bold),
+                                  fontSize: 24, fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(
                               height: 50,
@@ -124,6 +123,18 @@ class _SignUpState extends State<SignUp> {
                               alignment: Alignment.center,
                               child: GestureDetector(
                                 onTap: () {
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return AlertDialog(
+                                          title: Center(
+                                            child: CircularProgressIndicator(
+                                              color: Color.fromRGBO(
+                                                  255, 152, 94, 1),
+                                            ),
+                                          ),
+                                        );
+                                      });
                                   UserOTD user = UserOTD(
                                     name: _name.text,
                                     phone: _phone.text,
@@ -139,7 +150,7 @@ class _SignUpState extends State<SignUp> {
                                 },
                                 child: Container(
                                   width: 200,
-                                  height: 60,
+                                  height: 50,
                                   alignment: Alignment.center,
                                   decoration: BoxDecoration(
                                       color:
@@ -156,7 +167,7 @@ class _SignUpState extends State<SignUp> {
                               ),
                             ),
                             const SizedBox(
-                              height: 50,
+                              height: 200,
                             ),
                           ],
                         ),

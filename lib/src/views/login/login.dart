@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_my_train/src/controller/login/login.dart';
-import 'package:flutter_my_train/src/model/client.dart';
+
 import 'package:flutter_my_train/src/utils/push.dart';
 import 'package:flutter_my_train/src/views/home/home.dart';
 import 'package:flutter_my_train/src/views/login/signup.dart';
@@ -31,7 +31,7 @@ class _LoginState extends State<Login> {
           Text(
             title,
             style:
-                GoogleFonts.nunito(fontSize: 18, fontWeight: FontWeight.w700),
+                GoogleFonts.nunito(fontSize: 16, fontWeight: FontWeight.w700),
           ),
           TextField(
             controller: controller,
@@ -39,7 +39,7 @@ class _LoginState extends State<Login> {
             decoration: InputDecoration(
                 hintText: hint,
                 hintStyle: GoogleFonts.nunito(
-                    fontSize: 14, color: Colors.black.withOpacity(0.7))),
+                    fontSize: 12, color: Colors.black.withOpacity(0.7))),
           )
         ],
       );
@@ -76,7 +76,7 @@ class _LoginState extends State<Login> {
                           Text(
                             'Đăng Nhập',
                             style: GoogleFonts.nunito(
-                                fontSize: 28, fontWeight: FontWeight.bold),
+                                fontSize: 24, fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(
                             height: 20,
@@ -109,7 +109,7 @@ class _LoginState extends State<Login> {
                                       child: Text(
                                         'Quên mật khẩu ?',
                                         style: GoogleFonts.nunito(
-                                            fontSize: 16,
+                                            fontSize: 12,
                                             color:
                                                 Colors.black.withOpacity(0.7)),
                                       ),
@@ -122,6 +122,19 @@ class _LoginState extends State<Login> {
                                     children: [
                                       GestureDetector(
                                         onTap: () {
+                                          showDialog(
+                                              context: context,
+                                              builder: (context) {
+                                                return AlertDialog(
+                                                  title: Center(
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      color: Color.fromRGBO(
+                                                          255, 152, 94, 1),
+                                                    ),
+                                                  ),
+                                                );
+                                              });
                                           _controller
                                               .login(
                                             phone: _nameInput.text,
@@ -146,7 +159,7 @@ class _LoginState extends State<Login> {
                                         },
                                         child: Container(
                                           width: 200,
-                                          height: 60,
+                                          height: 50,
                                           alignment: Alignment.center,
                                           decoration: BoxDecoration(
                                               color: const Color.fromRGBO(
@@ -172,7 +185,7 @@ class _LoginState extends State<Login> {
                                           Text(
                                             'Bạn chưa có tài khoản?',
                                             style: GoogleFonts.nunito(
-                                                fontSize: 16,
+                                                fontSize: 14,
                                                 color: Colors.black
                                                     .withOpacity(0.7),
                                                 fontWeight: FontWeight.w700),
@@ -189,7 +202,7 @@ class _LoginState extends State<Login> {
                                             child: Text(
                                               'Đăng ký',
                                               style: GoogleFonts.nunito(
-                                                  fontSize: 16,
+                                                  fontSize: 14,
                                                   color: Colors.blue,
                                                   fontWeight: FontWeight.w700),
                                             ),

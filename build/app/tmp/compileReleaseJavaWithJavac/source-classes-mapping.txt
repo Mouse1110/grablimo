@@ -1,4 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/mouse/flutter_my_train/BuildConfig.java
- com.mouse.flutter_my_train.BuildConfig

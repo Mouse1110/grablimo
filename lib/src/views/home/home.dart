@@ -268,9 +268,9 @@ class _HomeState extends State<Home> {
               color: Color.fromRGBO(244, 244, 244, 1),
               child: Stack(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 20, right: 20, top: 30),
-                    child: SingleChildScrollView(
+                  SingleChildScrollView(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 20, right: 20, top: 30),
                       child: Column(
                         children: [
                           Row(
@@ -334,7 +334,7 @@ class _HomeState extends State<Home> {
                           ),
                           cardTicket(),
                           const SizedBox(
-                            height: 50,
+                            height: 150,
                           ),
                         ],
                       ),
@@ -356,6 +356,7 @@ class _HomeState extends State<Home> {
                                 child: Container(
                                   height: 60,
                                   width: double.infinity,
+                                  alignment: Alignment.center,
                                   decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.only(
@@ -368,6 +369,13 @@ class _HomeState extends State<Home> {
                                             offset: Offset(0, -4),
                                             blurRadius: 4),
                                       ]),
+                                  child: Text('Đặt vé ngay với chúng tôi',
+                                      style: GoogleFonts.nunito(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w700,
+                                          letterSpacing: 1.5,
+                                          color:
+                                              Color.fromRGBO(0, 87, 255, 1))),
                                 )),
                             Positioned(
                                 top: 0,

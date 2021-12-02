@@ -1,4 +1,4 @@
-package com.mouse.flutter_my_train
+package com.example.flutter_my_train
 
 import io.flutter.embedding.android.FlutterActivity
 

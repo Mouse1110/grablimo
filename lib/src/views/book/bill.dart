@@ -308,5 +308,5 @@ class _BookBillState extends State<BookBill> {
   }
 
   @override
-  Widget build(BuildContext context) => scaffold();
+  Widget build(BuildContext context) => scaffold(context: context);
 }
